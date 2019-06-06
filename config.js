@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+  url: 'https://ryankilleen.com',
+  title: 'Ryan Killeen',
+  subtitle: 'UI Developer, User Advocate, Senior Engineer at Think Company',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
@@ -23,16 +23,14 @@ module.exports = {
     }
   ],
   author: {
-    name: 'John Doe',
+    name: 'Ryan Killeen',
     photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    bio: 'UI Developer, User Advocate, Senior Engineer at Think Company',
     contacts: {
-      email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
+      email: 'rykilleen@gmail.com',
+      twitter: '@deathbypapercut',
+      github: 'rykilleen',
       rss: '#',
-      vkontakte: '#'
     }
   }
 };
