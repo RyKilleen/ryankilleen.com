@@ -2,7 +2,7 @@
 template: post
 title: 'Frequent Questions: What Does a Front-End / UI Developer Do?'
 slug: /posts/what-does-a-front-end-ui-developer-do
-draft: true
+draft: false
 date: 2018-04-17T03:56:20.831Z
 description: The first in a series of posts of questions I'm asked most often.
 category: faq
