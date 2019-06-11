@@ -2,7 +2,7 @@
 template: post
 title: Identifying The True Challenge Within The Question
 slug: /posts/identifying-the-true-challenge-within-the-question
-draft: true
+draft: false
 date: 2018-01-25T23:51:26.508Z
 description: >-
   Good consulting (and good development!) is getting to the root of the
