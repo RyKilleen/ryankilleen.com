@@ -2,7 +2,7 @@
 template: post
 title: New Platforms for New Hopes and Dreams
 slug: /posts/new-platforms-for-new-hopes-and-dreams
-draft: true
+draft: false
 date: 2018-03-05T04:56:20.831Z
 description: 'Hello, World! Trying out Gatsby'
 category: intro
