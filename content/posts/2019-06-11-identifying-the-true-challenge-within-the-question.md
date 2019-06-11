@@ -36,12 +36,12 @@ Say we want to make a change that involves a particular file, but we need to kno
 
 We can ask Neo4j “Hey, what files rely on ‘exampleFile.cfm’?” :
 
-![A neo 4j query showing results ](/images/graphExample.gif)
+![A neo 4j query showing results ](/media/graphExample.gif)
 
 
 Or “Show us all the relationships in our application”:
 
-![A neo 4j query showing results ](/images/allGraph.gif)
+![A neo 4j query showing results ](/media/allGraph.gif)
  
 
 Instead of a static visualization, we have our data in a queryable format! The most important thing I learned is to always get to the root of what the client is trying to do. “What are you trying to achieve?” is a powerful question, and can be the difference between a satisfactory outcome and a robust solution for the client. When exposed to the dev team at large, they were immediately inspired to ask more questions of the graph database. Instead of a good-enough tool, we leveraged a tool that got us even closer to making our case and solving the issue. The whole journey was a good reminder: expand your horizons outside your discipline, and always look for the right problem to solve—not necessarily the literal question you’re presented with. This approach leads to solutions that exceed expectations.
