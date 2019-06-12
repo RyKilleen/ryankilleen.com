@@ -2,6 +2,6 @@
 template: page
 title: test
 slug: test
-draft: true
+draft: false
 ---
 # Herp Derp
