@@ -1,0 +1,118 @@
+:root {
+    --color-gray: #0b1418;
+    --color-green: #98E2C6;
+    --color-peach: #EC98AE;
+    --theme-background: var(--color-gray);
+    --theme-foreground: var(--color-green);
+    --theme-accent: var(--color-peach);
+    --font-copy: "Roboto Mono", monospace;
+    --font-weight-test: 500;
+    --animation-transform: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html,
+body {
+    color: var(--theme-foreground);
+    background: var(--theme-background);
+    font-family: var(--font-copy);
+    font-size: 16px;
+}
+
+body {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 250;
+}
+
+h2 {
+    font-size: 3.2rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 555;
+}
+
+p,
+ul,
+li {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+
+
+ul.working li::marker {
+    content: "⚒️"
+}
+
+ul.dabbling li::marker {
+    content: "🧪";
+}
+
+ul.reading li::marker {
+    content: "📖";
+}
+li {
+    padding-left: 4px;
+    margin-bottom: 10px;
+}
+
+hr {
+    border-color: var(--theme-accent);
+}
+.about-me {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headshot {
+    max-width: 250px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    flex: none;
+}
+
+.headshot img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 100%;
+}
+
+a {
+    color: var(--theme-accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    text-decoration-color: var(--theme-accent);
+    font-weight: 450;
+    transition: text-decoration-color 0.3s var(--animation-transform);
+}
+a:hover {
+    text-decoration-color: transparent;
+}
+a b {
+    font-weight: 700;
+}
+b {
+    font-weight: bolder;
+}
+@media screen and (min-width: 600px) {
+    .about-me {
+        flex-direction: row;
+    }
+    .headshot {
+        width: 33%;
+    }
+}
