@@ -95,7 +95,7 @@ hr {
 
 .headshot {
     max-width: 250px;
-    aspect-ratio: 1/1;
+    
     overflow: hidden;
     flex: none;
 }
@@ -103,6 +103,7 @@ hr {
 .headshot img {
     width: 100%;
     object-fit: contain;
+    aspect-ratio: 1/1;
     border-radius: 100%;
 }
 
