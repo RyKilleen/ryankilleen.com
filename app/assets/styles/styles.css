@@ -64,7 +64,7 @@ ul.reading li::marker {
     content: "📖";
 }
 
-ul.reading li::marker {
+ul.tinkering li::marker {
     content: "🤖";
 }
 
