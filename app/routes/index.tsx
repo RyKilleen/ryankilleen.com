@@ -16,7 +16,7 @@ export default function Index() {
             <div>
               <p>
                 Ryan enjoys working on the web, learning, teaching, and tinkering.
-                Currently, he is a Senior Engineer at <a href="https://nerstreet.com">Nerd Street Gamers</a>
+                Currently, he is a Senior Engineer at <a href="https://nerdstreet.com">Nerd Street Gamers</a>
               </p>
               <p>Always a work in progress.</p>
             </div>
