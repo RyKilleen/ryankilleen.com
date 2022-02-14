@@ -95,17 +95,13 @@ hr {
 
 .headshot {
     max-width: 250px;
-    
-    overflow: hidden;
     flex: none;
-}
-
-.headshot img {
     width: 100%;
     object-fit: contain;
     aspect-ratio: 1/1;
     border-radius: 100%;
 }
+
 
 a {
     color: var(--theme-accent);

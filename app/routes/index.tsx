@@ -1,6 +1,4 @@
 import styles from "~/assets//styles/styles.css";
-import Headshot from "~/assets/images/headshot.webp";
-import { useEffect } from "react";
 export default function Index() {
   return (
     <>
@@ -10,12 +8,11 @@ export default function Index() {
         <section>
           <h2>About</h2>
           <div className="about-me">
-            <div className="headshot">
               <img
-                src={Headshot}
+                className="headshot"
+                src='/images/headshot.webp'
                 alt="A selfie of Ryan standing in front of an orange, textured wall"
               />
-            </div>
             <div>
               <p>
                 Ryan enjoys working on the web, learning, teaching, and tinkering.
