@@ -1,5 +1,5 @@
 import styles from "~/assets//styles/styles.css";
-import Headshot from "~/assets/images/headshot.jpg";
+import Headshot from "~/assets/images/headshot.webp";
 import { useEffect } from "react";
 export default function Index() {
   return (
