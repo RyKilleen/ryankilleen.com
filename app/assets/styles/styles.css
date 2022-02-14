@@ -65,11 +65,12 @@ ul.reading li::marker {
 }
 li {
     padding-left: 4px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
 hr {
-    border-color: var(--theme-accent);
+    border-color: var(--theme-foreground);
+    margin: 4rem 0;
 }
 .about-me {
     display: flex;
@@ -77,6 +78,15 @@ hr {
     flex-direction: column;
     align-items: center;
 }
+
+@media screen and (min-width: 800px) {
+    .lately-holder {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+}
+
 
 .headshot {
     max-width: 250px;
