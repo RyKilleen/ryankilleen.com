@@ -63,6 +63,11 @@ ul.dabbling li::marker {
 ul.reading li::marker {
     content: "📖";
 }
+
+ul.reading li::marker {
+    content: "🤖";
+}
+
 li {
     padding-left: 4px;
     margin-bottom: 14px;

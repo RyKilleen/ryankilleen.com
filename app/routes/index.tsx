@@ -53,6 +53,13 @@ export default function Index() {
               </ul>
             </div>
             <div>
+              <h3>Tinkering on:</h3>
+              <ul className="tinkering">
+                <li><a href="https://www.synology.com">Synology NAS</a></li>
+                <li><a href="https://www.home-assistant.io/">Home Assistant</a></li>
+              </ul>
+            </div>
+            <div>
               <h3>Reading:</h3>
               <ul className="reading">
                 <li><a href="https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557">Thinking in Systems: A Primer - <b>Donella H. Meadows</b></a></li>
