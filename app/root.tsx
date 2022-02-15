@@ -4,12 +4,16 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
 
 export const meta: MetaFunction = () => {
-  return { title: "Ryan Killeen - Web Engineer" };
+  return {
+    title: "Ryan Killeen - Web Engineer",
+    description:
+      "Ryan Killeen's personal page, detailing his current interests, tech stack, and reading list.",
+  };
 };
 
 export default function App() {
