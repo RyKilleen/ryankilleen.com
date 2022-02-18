@@ -32,7 +32,8 @@ export default function App() {
         <script
           defer
           data-domain="ryankilleen.com"
-          src="https://plausible.io/js/plausible.js"
+          data-api="/misc/api/event"
+          src="/misc/js/script.js"
         ></script>
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
