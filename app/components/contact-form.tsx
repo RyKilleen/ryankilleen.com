@@ -10,14 +10,14 @@ const ContactForm = () => (
       <input
         id="from"
         name="from"
-        placeholder="eg. James or luna@dogbones.com"
+        placeholder="eg. Meghan, or luna@bestdog.com"
       ></input>
 
       <label htmlFor="message">Message</label>
       <textarea
         id="message"
         name="message"
-        placeholder="What would you like to say?"
+        placeholder="Send me questions, comments, or unsolicited praise!"
       ></textarea>
     </div>
     <button type="submit">Submit</button>

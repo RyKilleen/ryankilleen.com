@@ -9,7 +9,9 @@
     --font-weight-test: 500;
     --animation-transform: cubic-bezier(0.16, 1, 0.3, 1);
 }
-
+* {
+    box-sizing: border-box;
+}
 html,
 body {
     color: var(--theme-foreground);
@@ -138,7 +140,9 @@ b {
     }
 }
 
-
+.contact-form {
+    max-width: 550px;
+}
 .contact-form label{
         color: var(--theme-accent);
         margin-bottom: 4px;
@@ -151,6 +155,12 @@ input, textarea {
     padding: 0 1rem;
     min-height: 45px;
     font-family: unset;
+}
+
+
+input:focus-visible, textarea:focus-visible {
+    outline: none;
+    box-shadow:  0 0 1px 2px var(--theme-foreground);
 }
 
 input::placeholder, textarea::placeholder {
@@ -172,5 +182,5 @@ button {
     font-weight: 700;
     font-size: 1.2rem;
     font-family: unset;
-    /* text-transform: uppercase; */
+    cursor: pointer;
 }
