@@ -1,6 +1,6 @@
 import styles from "~/assets//styles/styles.css";
 import ContactForm from "../components/contact-form";
-import trackEvent from "../services/analytics";
+import trackEvent, { trackOutboundLink } from "../services/analytics";
 export default function Index() {
   return (
     <>
@@ -125,17 +125,29 @@ export default function Index() {
             }}
           >
             <li>
-              <a href="https://github.com/rykilleen">Github</a>
-            </li>
-            <li>
-              <a href="https://twitter.com/deathbypapercut">Twitter</a>
-            </li>
-            <li>
-              <a href="mailto:rykilleen@gmail.com">Email</a>
+              <a
+                href="https://github.com/rykilleen"
+                onClick={trackOutboundLink}
+              >
+                Github
+              </a>
             </li>
             <li>
               <a
-                onClick={() => trackEvent("Resume")}
+                href="https://twitter.com/deathbypapercut"
+                onClick={trackOutboundLink}
+              >
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="mailto:rykilleen@gmail.com" onClick={trackOutboundLink}>
+                Email
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={trackOutboundLink}
                 href="/ryan-killeen-resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
