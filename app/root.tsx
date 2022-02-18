@@ -16,6 +16,14 @@ export const meta: MetaFunction = () => {
   };
 };
 
+if (typeof document !== "undefined") {
+  window.plausible =
+    window.plausible ||
+    function () {
+      (window.plausible.q = window.plausible.q || []).push(arguments);
+    };
+}
+
 export default function App() {
   return (
     <html lang="en">
@@ -35,6 +43,7 @@ export default function App() {
           data-api="/misc/api/event"
           src="/misc/js/script.js"
         ></script>
+
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
