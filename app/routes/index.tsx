@@ -1,4 +1,5 @@
 import styles from "~/assets//styles/styles.css";
+import ContactForm from "../components/contact-form";
 import trackEvent from "../services/analytics";
 export default function Index() {
   return (
@@ -107,6 +108,13 @@ export default function Index() {
       </main>
       <hr />
       <footer>
+        <section>
+          <h2>Contact</h2>
+          <p>Feel free to send me a message!</p>
+          <ContactForm />
+          <hr />
+        </section>
+
         <nav>
           <ul
             style={{
