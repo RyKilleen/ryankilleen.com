@@ -35,6 +35,16 @@ export default function App() {
           data-api="/misc/api/event"
           src="/misc/js/script.js"
         ></script>
+        <script>
+          if (typeof window !== "undefined")
+          {
+            (window.plausible =
+              window.plausible ||
+              function () {
+                (window.plausible.q = window.plausible.q || []).push(arguments);
+              })
+          }
+        </script>
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
