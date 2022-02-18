@@ -29,6 +29,12 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
+        <script
+          defer
+          data-domain="ryankilleen.com"
+          data-api="/misc/api/event"
+          src="/misc/js/script.js"
+        ></script>
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
