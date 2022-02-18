@@ -1,4 +1,5 @@
 import styles from "~/assets//styles/styles.css";
+import trackEvent from "../services/analytics";
 export default function Index() {
   return (
     <>
@@ -126,7 +127,7 @@ export default function Index() {
             </li>
             <li>
               <a
-                onClick={() => window && window.plausible("Resume")}
+                onClick={() => trackEvent("Resume")}
                 href="/ryan-killeen-resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
