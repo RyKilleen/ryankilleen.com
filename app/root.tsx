@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+import { useEffect } from "react";
 
 export const meta: MetaFunction = () => {
   return {
@@ -17,6 +18,13 @@ export const meta: MetaFunction = () => {
 };
 
 export default function App() {
+  useEffect(() => {
+    window.plausible =
+      window.plausible ||
+      function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+  }, []);
   return (
     <html lang="en">
       <head>
