@@ -108,12 +108,12 @@ export default function Index() {
       </main>
       <hr />
       <footer>
-        <section>
+        {/* <section>
           <h2>Contact</h2>
           <p>Feel free to send me a message!</p>
           <ContactForm />
           <hr />
-        </section>
+        </section> */}
 
         <nav>
           <ul
