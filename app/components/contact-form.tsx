@@ -2,6 +2,7 @@ const ContactForm = () => (
   <form
     title="Contact Ryan Killeen"
     name="contact"
+    method="POST"
     data-netlify="true"
     className="contact-form"
   >
