@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+import styles from './assets/styles/styles.css'
 import { useEffect } from "react";
 
 export const meta: MetaFunction = () => {
@@ -47,4 +48,28 @@ export default function App() {
       </body>
     </html>
   );
+}
+
+
+export function links() {
+  return [
+    { rel: "stylesheet", href: styles },
+    {
+      rel: "preconnect",
+      href: "https://fonts.googleapis.com",
+    },
+    {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+    },
+    {
+      rel: "preload",
+      href: "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap",
+      as: "style",
+    },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap",
+    },
+  ];
 }

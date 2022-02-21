@@ -1,12 +1,8 @@
-import styles from "~/assets//styles/styles.css";
-import ContactForm from "../components/contact-form";
-import trackEvent, { trackOutboundLink } from "../services/analytics";
+import Layout from "~/components/layout";
+
 export default function Index() {
   return (
-    <>
-      <main>
-        <h1>Ryan Killeen</h1>
-
+      <Layout>
         <section>
           <h2>About</h2>
           <div className="about-me">
@@ -105,83 +101,6 @@ export default function Index() {
             </div>
           </div>
         </section>
-      </main>
-      <hr />
-      <footer>
-        {/* <section>
-          <h2>Contact</h2>
-          <p>Feel free to send me a message!</p>
-          <ContactForm />
-          <hr />
-        </section> */}
-
-        <nav>
-          <ul
-            style={{
-              display: "flex",
-              listStyle: "none",
-              padding: 0,
-              gap: "1rem",
-            }}
-          >
-            <li>
-              <a
-                href="https://github.com/rykilleen"
-                onClick={trackOutboundLink}
-              >
-                Github
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/deathbypapercut"
-                onClick={trackOutboundLink}
-              >
-                Twitter
-              </a>
-            </li>
-            <li>
-              <a href="mailto:rykilleen@gmail.com" onClick={trackOutboundLink}>
-                Email
-              </a>
-            </li>
-            <li>
-              <a
-                onClick={trackOutboundLink}
-                href="/ryan-killeen-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Resume
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <p>This website is best viewed on an electronic device.</p>
-      </footer>
-    </>
+      </Layout>
   );
-}
-
-export function links() {
-  return [
-    { rel: "stylesheet", href: styles },
-    {
-      rel: "preconnect",
-      href: "https://fonts.googleapis.com",
-    },
-    {
-      rel: "preconnect",
-      href: "https://fonts.gstatic.com",
-    },
-    {
-      rel: "preload",
-      href: "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap",
-      as: "style",
-    },
-    {
-      rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap",
-    },
-  ];
 }
