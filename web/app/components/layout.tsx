@@ -11,7 +11,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 alignItems: 'center'
             }}>
                 <h1 style={{ fontSize: '1.2rem', margin: 0 }}>Ryan Killeen</h1>
-                <nav>
+                <nav title="main navigation">
                     <ul style={{display: 'flex', gap: '1rem', listStyle: 'none'}}>
                         <li><Link to="/">About</Link></li>
                         <li><Link to="/posts">Posts</Link></li>
