@@ -1,15 +1,8 @@
 import { useLoaderData } from "remix";
 import Layout from "~/components/layout";
 import { client } from "~/services/cms";
+import { Post } from "~/routes/posts/$slug";
 
-type Post = {
-  title: string;
-  slug: {
-    current: string;
-  };
-  categories: string[];
-  publishedAt: string;
-};
 export const loader = async () => {
   const posts: Post[] = await client.fetch(`
     *[_type == 'post' && !(_id in path("drafts.**"))] { 

@@ -5,10 +5,13 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useMatches,
 } from "remix";
 import type { MetaFunction } from "remix";
 import styles from "./assets/styles/styles.css";
 import { useEffect } from "react";
+import { createSchema } from "./utils/schema";
+import type { Post } from "./routes/posts/$slug";
 
 export const meta: MetaFunction = () => {
   return {
@@ -18,7 +21,22 @@ export const meta: MetaFunction = () => {
   };
 };
 
+const buildSchemas = (matches: ReturnType<typeof useMatches>) => {
+  const schemaObjects = [];
+  const postMatch = matches.find((m) => m?.data?._type === "post");
+  if (postMatch) {
+    const postSchema = createSchema(postMatch.data);
+    schemaObjects.push(postSchema);
+  }
+
+  return schemaObjects;
+};
+
 export default function App() {
+  const matches = useMatches();
+
+  const schemas = buildSchemas(matches);
+
   useEffect(() => {
     window.plausible =
       window.plausible ||
@@ -33,6 +51,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
+        {schemas}
       </head>
       <body>
         <Outlet />
