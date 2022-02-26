@@ -1,0 +1,12 @@
+article h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.published-at {
+  font-weight: 100;
+}
+
+.published-at time {
+  font-weight: bolder;
+}

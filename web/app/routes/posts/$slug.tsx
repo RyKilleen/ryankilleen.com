@@ -2,6 +2,7 @@ import { useLoaderData } from "remix";
 import { client } from "~/services/cms";
 import { PortableText } from "@portabletext/react";
 import Layout from "~/components/layout";
+import styles from "~/assets/styles/article.css";
 
 export const loader = async ({ params }: { params: any }) => {
   const post = await client.fetch(`
@@ -18,8 +19,6 @@ export default function PostSlug() {
     day: "numeric",
     year: "numeric",
     hour: "numeric",
-    timeZone: "EST",
-    timeZoneName: "short",
     minute: "numeric",
   };
   const publishDateAsText = new Intl.DateTimeFormat([], options).format(
@@ -28,11 +27,17 @@ export default function PostSlug() {
 
   return (
     <Layout>
-      <h1>{title}</h1>
-      <div>
-        Published <time dateTime={publishedAt}>{publishDateAsText}</time>
-      </div>
-      <PortableText value={body} />
+      <article>
+        <h1>{title}</h1>
+        <div className="published-at">
+          Published <time dateTime={publishedAt}>{publishDateAsText}</time>
+        </div>
+        <PortableText value={body} />
+      </article>
     </Layout>
   );
+}
+
+export function links() {
+  return [{ rel: "stylesheet", href: styles }];
 }

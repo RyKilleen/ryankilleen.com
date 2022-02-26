@@ -27,14 +27,24 @@ body {
 }
 
 h1 {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 250;
   margin-block-start: 3rem;
   margin-block-end: 3rem;
 }
 
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+  }
+}
+
 h2 {
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: 400;
   margin-block-start: 2rem;
   margin-block-end: 2rem;
