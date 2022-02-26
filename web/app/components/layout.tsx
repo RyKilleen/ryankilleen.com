@@ -10,9 +10,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 justifyContent: 'space-between',
                 alignItems: 'center'
             }}>
-                <h1 style={{ fontSize: '1.2rem', margin: 0 }}>Ryan Killeen</h1>
+                <a href="/" style={{ all: 'unset', cursor: 'pointer' }}><h1 style={{ fontSize: '1.2rem', margin: 0 }}>Ryan Killeen</h1></a>
                 <nav title="main navigation">
-                    <ul style={{display: 'flex', gap: '1rem', listStyle: 'none'}}>
+                    <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none' }}>
                         <li><Link to="/">About</Link></li>
                         <li><Link to="/posts">Posts</Link></li>
                     </ul></nav></header>
@@ -21,12 +21,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </main>
             <hr />
             <footer>
-                {/* <section>
-          <h2>Contact</h2>
-          <p>Feel free to send me a message!</p>
-          <ContactForm />
-          <hr />
-        </section> */}
+
 
                 <nav>
                     <ul
