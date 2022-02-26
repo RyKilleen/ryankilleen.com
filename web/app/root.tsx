@@ -7,7 +7,7 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
-import styles from './assets/styles/styles.css'
+import styles from "./assets/styles/styles.css";
 import { useEffect } from "react";
 
 export const meta: MetaFunction = () => {
@@ -49,7 +49,6 @@ export default function App() {
     </html>
   );
 }
-
 
 export function links() {
   return [
