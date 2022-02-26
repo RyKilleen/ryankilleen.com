@@ -24,7 +24,7 @@ export default function PostSlug() {
     }
     const publishDateAsText = new Intl.DateTimeFormat([], options)
         .format(new Date(publishedAt));
-    console.log(publishDateAsText)
+        
     return (
         <Layout>
             <h1>{title}</h1>

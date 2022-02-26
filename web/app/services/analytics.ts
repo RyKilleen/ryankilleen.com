@@ -1,10 +1,6 @@
 const trackEvent = (evtName: string) => {
   if (typeof document !== "undefined") {
-    window.plausible(evtName, {
-      callback: () => {
-        console.log(evtName);
-      },
-    });
+    window.plausible(evtName);
   }
 };
 
@@ -13,7 +9,6 @@ export const trackOutboundLink = (
 ) => {
   const href = e.currentTarget.href;
   window.plausible("Outbound Click", {
-    callback: () => console.log(`Outbound Click: ${href}`),
     props: {
       href,
     },
