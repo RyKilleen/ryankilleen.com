@@ -1,6 +1,45 @@
+import { useLoaderData } from "remix";
 import Layout from "~/components/layout";
+import { client } from "../services/cms";
+import groupBy from "lodash/groupBy";
+
+type Interest = {
+  title: string;
+  url: string;
+  category: string;
+};
+
+type Book = Interest & {
+  author: string;
+};
+
+type FeaturedInterest = Interest | Book;
+export const loader = async () => {
+  const interests = await client.fetch(`
+      *[featured == true && (_type == 'interest' || _type== 'book')] {
+        title,
+        url,
+        _type == 'interest' => {  
+          "category": category -> title
+        },
+        _type == 'book' => {  
+          "author" : author -> name,
+          "category" : "reading"
+        }
+      }
+    `);
+  const test = groupBy(interests, "category");
+  return test;
+};
+
+const InterestLink = ({ url, title }: Partial<FeaturedInterest>) => (
+  <a href={url}>{title}</a>
+);
 
 export default function Index() {
+  const interests = useLoaderData();
+  console.log(interests);
+
   return (
     <Layout>
       <section>
@@ -29,74 +68,41 @@ export default function Index() {
           <div>
             <h3>Working with:</h3>
             <ul className="working">
-              <li>
-                <a href="https://nextjs.org">NextJS</a>
-              </li>
-              <li>
-                <a href="https://www.apollographql.com">Apollo GraphQL</a>
-              </li>
-              <li>
-                <a href="https://sanity.io">Sanity CMS</a>
-              </li>
-              <li>
-                <a href="https://stitches.dev">Stitches JS</a>
-              </li>
-              <li>
-                <a href="https://playwright.dev">Playwright</a>
-              </li>
-              <li>
-                <a href="https://www.typescriptlang.org">TypeScript</a>
-              </li>
+              {interests["working with"].map((interest: FeaturedInterest) => (
+                <li>
+                  <InterestLink {...interest} />
+                </li>
+              ))}
             </ul>
           </div>
           <div>
             <h3>Dabbling in:</h3>
             <ul className="dabbling">
-              <li>
-                <a href="https://prisma.io">Prisma</a>
-              </li>
-              <li>
-                <a href="https://remix.run/">Remix.Run</a>
-              </li>
-              <li>
-                <a href="https://www.rust-lang.org/">Rust 🦀</a>
-              </li>
-              <li>
-                <a href="https://tauri.studio/">Tauri</a>
-              </li>
-              <li>
-                <a href="https://temporal.io">Temporal</a>
-              </li>
-              <li>
-                <a href="https://www.pulumi.com">Palumi</a>
-              </li>
+              {interests.experimenting.map((interest: FeaturedInterest) => (
+                <li>
+                  <InterestLink {...interest} />
+                </li>
+              ))}
             </ul>
           </div>
           <div>
             <h3>Tinkering on:</h3>
             <ul className="tinkering">
-              <li>
-                <a href="https://www.synology.com">Synology NAS</a>
-              </li>
-              <li>
-                <a href="https://www.home-assistant.io/">Home Assistant</a>
-              </li>
+              {interests.tinkering.map((interest: FeaturedInterest) => (
+                <li>
+                  <InterestLink {...interest} />
+                </li>
+              ))}
             </ul>
           </div>
           <div>
             <h3>Reading:</h3>
             <ul className="reading">
-              <li>
-                <a href="https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557">
-                  Thinking in Systems: A Primer - <b>Donella H. Meadows</b>
-                </a>
-              </li>
-              <li>
-                <a href="https://staffeng.com/book">
-                  Staff Engineer: Leadership beyond the management track -{" "}
-                  <b>Will Larson</b>
-                </a>
-              </li>
+              {interests.reading.map((interest: FeaturedInterest) => (
+                <li>
+                  <InterestLink {...interest} />
+                </li>
+              ))}
             </ul>
           </div>
         </div>
