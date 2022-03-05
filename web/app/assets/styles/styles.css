@@ -1,10 +1,11 @@
 :root {
-  --color-gray: #0b1418;
-  --color-green: #98e2c6;
-  --color-peach: #ec98ae;
-  --theme-background: var(--color-gray);
-  --theme-foreground: var(--color-green);
-  --theme-accent: var(--color-peach);
+
+  --color-dark-pearl: #0b1e2d;
+  --color-blue-sky: #b8eeff;
+  --color-orange: #f4744e;
+  --theme-background: var(--color-dark-pearl);
+  --theme-foreground: var(--color-blue-sky);
+  --theme-accent: var(--color-orange);
   --font-copy: "Roboto Mono", monospace;
   --font-weight-test: 500;
   --animation-transform: cubic-bezier(0.16, 1, 0.3, 1);
