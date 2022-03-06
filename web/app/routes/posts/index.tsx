@@ -2,17 +2,18 @@ import { useLoaderData } from "remix";
 import Layout from "~/components/layout";
 import { client } from "~/services/cms";
 import { Post } from "~/routes/posts/$slug";
+import styles from "~/assets/styles/posts.css";
 
 export const loader = async () => {
   const posts: Post[] = await client.fetch(`
     *[_type == 'post' && !(_id in path("drafts.**"))] { 
         title,
         slug,
-        categories,
+        "categories": categories[]->,
         publishedAt
     }
     `);
-  return posts;
+  return [...posts];
 };
 
 export default function Blog() {
@@ -21,13 +22,32 @@ export default function Blog() {
   return (
     <Layout>
       <h1>Posts</h1>
-      <ul>
+      <ul className="post-list">
         {data.map((post) => (
           <li>
             <a href={`/posts/${post?.slug?.current ?? ""}`}>{post.title}</a>
+            <div>
+              <ul className="post-categories" aria-label="post categories">
+                {post.categories.map(({ slug, title }) => (
+                  <li>
+                    <a
+                      style={{ cursor: "default" }}
+                      // href={`/category/${slug.current}`}
+                      className="pill post-category"
+                    >
+                      {title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </li>
         ))}
       </ul>
     </Layout>
   );
+}
+
+export function links() {
+  return [{ rel: "stylesheet", href: styles }];
 }
