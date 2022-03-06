@@ -1,0 +1,11 @@
+.post-list, .post-categories {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.post-category {
+   
+    cursor: pointer;
+    
+}

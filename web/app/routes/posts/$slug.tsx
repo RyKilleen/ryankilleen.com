@@ -8,15 +8,24 @@ import {
   SanityAsset,
 } from "@sanity/image-url/lib/types/types";
 
+type Slug = {
+  current: string;
+};
+type Category = {
+  slug: Slug;
+  title: string;
+  description: string;
+};
 export type Post = {
   publishedAt: string;
   title: string;
   body: any; // The underlying style for PortableText 🤷🏻‍♂️
-  slug: { current: string };
+  slug: Slug;
   mainImage: SanityImageObject & {
     asset: SanityAsset;
   };
   _updatedAt: string;
+  categories: Category[];
 };
 
 export const loader = async ({ params }: { params: { slug: string } }) => {
@@ -49,7 +58,7 @@ export default function PostSlug() {
   return (
     <Layout>
       <article>
-        <h1>{title}</h1>
+        <h1 className="small">{title}</h1>
         <div className="published-at">
           Published <time dateTime={publishedAt}>{publishDateAsText}</time>
         </div>

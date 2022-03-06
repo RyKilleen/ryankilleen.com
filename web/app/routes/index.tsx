@@ -38,7 +38,6 @@ const InterestLink = ({ url, title }: Partial<FeaturedInterest>) => (
 
 export default function Index() {
   const interests = useLoaderData();
-  console.log(interests);
 
   return (
     <Layout>
@@ -67,7 +66,7 @@ export default function Index() {
         <div className="lately-holder">
           <div>
             <h3>Working with:</h3>
-            <ul className="working">
+            <ul className="working list">
               {interests["working with"].map((interest: FeaturedInterest) => (
                 <li>
                   <InterestLink {...interest} />
@@ -77,7 +76,7 @@ export default function Index() {
           </div>
           <div>
             <h3>Dabbling in:</h3>
-            <ul className="dabbling">
+            <ul className="dabbling list">
               {interests.experimenting.map((interest: FeaturedInterest) => (
                 <li>
                   <InterestLink {...interest} />
@@ -87,7 +86,7 @@ export default function Index() {
           </div>
           <div>
             <h3>Tinkering on:</h3>
-            <ul className="tinkering">
+            <ul className="tinkering list">
               {interests.tinkering.map((interest: FeaturedInterest) => (
                 <li>
                   <InterestLink {...interest} />
@@ -97,7 +96,7 @@ export default function Index() {
           </div>
           <div>
             <h3>Reading:</h3>
-            <ul className="reading">
+            <ul className="reading list">
               {interests.reading.map((interest: FeaturedInterest) => (
                 <li>
                   <InterestLink {...interest} />
