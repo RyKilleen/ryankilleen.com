@@ -1,93 +1,123 @@
+import type { LinksFunction, MetaFunction, LoaderFunction } from 'remix';
+import * as React from 'react';
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-  useMatches,
-} from "remix";
-import type { MetaFunction } from "remix";
-import styles from "./assets/styles/styles.css";
-import { useEffect } from "react";
-import { createSchema } from "./utils/schema";
-import type { Post } from "./routes/posts/$slug";
+  useCatch,
+} from 'remix';
 
-export const meta: MetaFunction = () => {
+import stylesUrl from './assets/styles/styles.css';
+
+/**
+ * The `links` export is a function that returns an array of objects that map to
+ * the attributes for an HTML `<link>` element. These will load `<link>` tags on
+ * every route in the app, but individual routes can include their own links
+ * that are automatically unloaded when a user navigates away from the route.
+ *
+ * https://remix.run/api/app#links
+ */
+export let links: LinksFunction = () => {
+  return [{ rel: 'stylesheet', href: stylesUrl }];
+};
+
+export let meta: MetaFunction = () => {
   return {
-    title: "Ryan Killeen - Web Engineer",
-    description:
-      "Ryan Killeen's personal page, detailing his current interests, tech stack, and reading list.",
+    viewport: 'width=device-width, initial-scale=1',
   };
 };
 
-const buildSchemas = (matches: ReturnType<typeof useMatches>) => {
-  const schemaObjects = [];
-  const postMatch = matches.find((m) => m?.data?._type === "post");
-  if (postMatch) {
-    const postSchema = createSchema(postMatch.data);
-    schemaObjects.push(postSchema);
-  }
-
-  return schemaObjects;
+export let loader: LoaderFunction = async () => {
+  return { date: new Date() };
 };
 
 export default function App() {
-  const matches = useMatches();
+  return (
+    <Document>
+      <Outlet />
+    </Document>
+  );
+}
 
-  const schemas = buildSchemas(matches);
-
-  useEffect(() => {
-    window.plausible =
-      window.plausible ||
-      function () {
-        (window.plausible.q = window.plausible.q || []).push(arguments);
-      };
-  }, []);
+function Document({
+  children,
+  title,
+}: {
+  children: React.ReactNode;
+  title?: string;
+}) {
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
-        {schemas}
       </head>
       <body>
-        <Outlet />
+        {children}
         <ScrollRestoration />
         <Scripts />
-        <script
-          defer
-          data-domain="ryankilleen.com"
-          data-api="/misc/api/event"
-          src="/misc/js/script.js"
-        ></script>
-        {process.env.NODE_ENV === "development" && <LiveReload />}
+        {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </html>
   );
 }
 
-export function links() {
-  return [
-    { rel: "stylesheet", href: styles },
-    {
-      rel: "preconnect",
-      href: "https://fonts.googleapis.com",
-    },
-    {
-      rel: "preconnect",
-      href: "https://fonts.gstatic.com",
-    },
-    {
-      rel: "preload",
-      href: "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap",
-      as: "style",
-    },
-    {
-      rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap",
-    },
-  ];
+export function CatchBoundary() {
+  let caught = useCatch();
+
+  let message;
+  switch (caught.status) {
+    case 401:
+      message = (
+        <p>
+          Oops! Looks like you tried to visit a page that you do not have access
+          to.
+        </p>
+      );
+      break;
+    case 404:
+      message = (
+        <p>Oops! Looks like you tried to visit a page that does not exist.</p>
+      );
+      break;
+
+    default:
+      throw new Error(caught.data || caught.statusText);
+  }
+
+  return (
+    <Document title={`${caught.status} ${caught.statusText}`}>
+      <Layout>
+        <h1>
+          {caught.status}: {caught.statusText}
+        </h1>
+        {message}
+      </Layout>
+    </Document>
+  );
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  console.error(error);
+  return (
+    <Document title="Error!">
+      <Layout>
+        <div>
+          <h1>There was an error</h1>
+          <p>{error.message}</p>
+          <hr />
+          <p>
+            Hey, developer, you should replace this with what you want your
+            users to see.
+          </p>
+        </div>
+      </Layout>
+    </Document>
+  );
 }
