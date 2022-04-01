@@ -1,5 +1,13 @@
 node_modules
+
+# Remix
 /.cache
-/netlify/functions/server/build
+/build
 /public/build
-/.netlify
+
+# Custom Build
+/dist
+
+# Miniflare
+/.mf
+/.env
