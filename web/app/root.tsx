@@ -1,5 +1,5 @@
-import type { LinksFunction, MetaFunction, LoaderFunction } from 'remix';
-import * as React from 'react';
+import type { LinksFunction, MetaFunction, LoaderFunction } from "remix";
+import * as React from "react";
 import {
   Link,
   Links,
@@ -9,9 +9,10 @@ import {
   Scripts,
   ScrollRestoration,
   useCatch,
-} from 'remix';
+} from "remix";
 
-import stylesUrl from './assets/styles/styles.css';
+import stylesUrl from "./assets/styles/styles.css";
+import Layout from "./components/layout";
 
 /**
  * The `links` export is a function that returns an array of objects that map to
@@ -22,12 +23,12 @@ import stylesUrl from './assets/styles/styles.css';
  * https://remix.run/api/app#links
  */
 export let links: LinksFunction = () => {
-  return [{ rel: 'stylesheet', href: stylesUrl }];
+  return [{ rel: "stylesheet", href: stylesUrl }];
 };
 
 export let meta: MetaFunction = () => {
   return {
-    viewport: 'width=device-width, initial-scale=1',
+    viewport: "width=device-width, initial-scale=1",
   };
 };
 
@@ -62,7 +63,14 @@ function Document({
         {children}
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === 'development' && <LiveReload />}
+        <script
+          defer
+          data-domain="ryankilleen.com"
+          data-api="https://rk-data.rykilleen.workers.dev/misc/event"
+          src="https://rk-data.rykilleen.workers.dev/misc/script.js"
+        ></script>
+
+        {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
   );
