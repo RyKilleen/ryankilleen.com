@@ -59,6 +59,9 @@ jobs:
     # needs: [test, lint]
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
     steps:
       - name: Set up Node
         uses: actions/setup-node@v1
