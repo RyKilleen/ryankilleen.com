@@ -3,6 +3,8 @@ import { client } from "~/services/cms";
 import { PortableText } from "@portabletext/react";
 import Layout from "~/components/layout";
 import styles from "~/assets/styles/article.css";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
 import {
   SanityImageObject,
   SanityAsset,
@@ -67,7 +69,19 @@ export default function PostSlug() {
           width="1024"
           style={{ aspectRatio: "16/9" }}
         /> */}
-        <PortableText value={body} />
+        <PortableText
+          value={body}
+          components={{
+            types: {
+              codeSnippet: ({ value: { language, code } }: any) => (
+                // <pre>{JSON.stringify(props, null, 4)}</pre>
+                <SyntaxHighlighter language={language} style={okaidia}>
+                  {code}
+                </SyntaxHighlighter>
+              ),
+            },
+          }}
+        />
       </article>
     </Layout>
   );

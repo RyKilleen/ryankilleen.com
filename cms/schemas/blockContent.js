@@ -61,5 +61,13 @@ export default {
       type: 'image',
       options: {hotspot: true},
     },
+    {
+      name: 'codeSnippet',
+      title: 'Code Block',
+      type: 'code',
+      options: {
+        theme: 'solarized_dark',
+      }
+    }
   ],
 }
