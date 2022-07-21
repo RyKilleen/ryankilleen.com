@@ -1,5 +1,6 @@
-import sanityClient from "@sanity/client";
-
+// import sanityClient from "@sanity/client";
+// @ts-ignore
+import sanityClient from "picosanity/lib/browser";
 export const client = sanityClient({
   projectId: "90sffhgh",
   dataset: "production",

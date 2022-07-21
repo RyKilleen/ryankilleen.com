@@ -1,13 +1,8 @@
 node_modules
 
-# Remix
 /.cache
 /build
-/public/build
-
-# Custom Build
 /dist
-
-# Miniflare
+/public/build
 /.mf
-/.env
+.env
