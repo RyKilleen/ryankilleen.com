@@ -1,7 +1,7 @@
-import { useLoaderData } from "remix";
+import { useLoaderData } from "@remix-run/react";
 import Layout from "~/components/layout";
 import { client } from "~/services/cms";
-import { Post } from "~/routes/posts/$slug";
+import type { Post } from "~/routes/posts/$slug";
 import styles from "~/assets/styles/posts.css";
 
 export const loader = async () => {
@@ -24,12 +24,12 @@ export default function Blog() {
       <h1>Posts</h1>
       <ul className="post-list">
         {data.map((post) => (
-          <li>
+          <li key={post.slug.current}>
             <a href={`/posts/${post?.slug?.current ?? ""}`}>{post.title}</a>
             <div>
               <ul className="post-categories" aria-label="post categories">
                 {post.categories.map(({ slug, title }) => (
-                  <li>
+                  <li key={title}>
                     <a
                       style={{ cursor: "default" }}
                       // href={`/category/${slug.current}`}

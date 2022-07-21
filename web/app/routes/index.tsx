@@ -1,8 +1,8 @@
-import { useLoaderData } from 'remix';
-import Layout from '~/components/layout';
-import { client } from '../services/cms';
-import groupBy from 'lodash/groupBy';
-import HeadshotURL from '../assets/images/headshot.webp';
+import { useLoaderData } from "@remix-run/react";
+import Layout from "~/components/layout";
+import { client } from "../services/cms";
+import groupBy from "lodash/groupBy";
+import HeadshotURL from "../assets/images/headshot.webp";
 
 type Interest = {
   title: string;
@@ -29,7 +29,7 @@ export const loader = async () => {
         }
       }
     `);
-  const test = groupBy(interests, 'category');
+  const test = groupBy(interests, "category");
   return test;
 };
 
@@ -53,7 +53,7 @@ export default function Index() {
           <div>
             <p>
               Ryan enjoys working on the web, learning, teaching, and tinkering.
-              Currently, he is a Senior Front End Engineer at{' '}
+              Currently, he is a Senior Front End Engineer at{" "}
               <a href="https://www.mantl.com/">MANTL</a>
             </p>
             <p>Always a work in progress.</p>
@@ -68,7 +68,7 @@ export default function Index() {
           <div>
             <h3>Working with:</h3>
             <ul className="working list">
-              {interests['working with'].map((interest: FeaturedInterest) => (
+              {interests["working with"].map((interest: FeaturedInterest) => (
                 <li key={interest.title}>
                   <InterestLink {...interest} />
                 </li>
