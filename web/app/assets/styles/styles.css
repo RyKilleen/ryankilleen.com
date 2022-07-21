@@ -8,7 +8,8 @@
   --theme-foreground: var(--color-cyan);
   --theme-secondary: var(--color-orange);
   --theme-accent: var(--color-cyan-light);
-  --font-copy: "Roboto Mono", monospace;
+  --font-heading: Cambria, Georgia, serif;
+  --font-copy: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
   --font-weight-test: 500;
   --animation-transform: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -28,7 +29,15 @@ body {
   margin: 0 auto;
   max-width: 1024px;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
 h1 {
   font-size: 3.5rem;
   font-weight: 250;
