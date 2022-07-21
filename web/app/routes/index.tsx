@@ -66,7 +66,7 @@ export default function Index() {
         <h2>Lately, I've been</h2>
         <div className="lately-holder">
           <div>
-            <h3>Working with:</h3>
+            <h3>⚒️ Working with</h3>
             <ul className="working list">
               {interests["working with"].map((interest: FeaturedInterest) => (
                 <li key={interest.title}>
@@ -76,7 +76,7 @@ export default function Index() {
             </ul>
           </div>
           <div>
-            <h3>Dabbling in:</h3>
+            <h3>🧪 Dabbling in</h3>
             <ul className="dabbling list">
               {interests.experimenting.map((interest: FeaturedInterest) => (
                 <li key={interest.title}>
@@ -86,7 +86,7 @@ export default function Index() {
             </ul>
           </div>
           <div>
-            <h3>Tinkering on:</h3>
+            <h3>🤖 Tinkering on</h3>
             <ul className="tinkering list">
               {interests.tinkering.map((interest: FeaturedInterest) => (
                 <li key={interest.title}>
@@ -96,7 +96,7 @@ export default function Index() {
             </ul>
           </div>
           <div>
-            <h3>Reading:</h3>
+            <h3>📖 Reading</h3>
             <ul className="reading list">
               {interests.reading.map((interest: FeaturedInterest) => (
                 <li key={interest.title}>

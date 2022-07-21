@@ -1,11 +1,13 @@
 :root {
-
-  --color-dark-pearl: #0b1e2d;
-  --color-blue-sky: #b8eeff;
-  --color-orange: #f4744e;
-  --theme-background: var(--color-dark-pearl);
-  --theme-foreground: var(--color-blue-sky);
-  --theme-accent: var(--color-orange);
+  --color-dark-cyan: #07191d;
+  --color-cyan: #00c2d7;
+  --color-cyan-6: #064150;
+  --color-cyan-light: #05a2c2;
+  --color-orange: #ff8b3e;
+  --theme-background: var(--color-dark-cyan);
+  --theme-foreground: var(--color-cyan);
+  --theme-secondary: var(--color-orange);
+  --theme-accent: var(--color-cyan-light);
   --font-copy: "Roboto Mono", monospace;
   --font-weight-test: 500;
   --animation-transform: cubic-bezier(0.16, 1, 0.3, 1);
@@ -18,7 +20,7 @@ body {
   color: var(--theme-foreground);
   background: var(--theme-background);
   font-family: var(--font-copy);
-  font-size: 16px;
+  font-size: 18px;
 }
 
 body {
@@ -67,8 +69,15 @@ h3 {
 p,
 ul,
 li {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 150%;
+}
+ul,
+li {
   font-weight: 400;
+}
+li {
+  line-height: 150%;
 }
 p {
   font-weight: 200;
@@ -77,7 +86,7 @@ p {
 section {
   margin-bottom: 2rem;
 }
-
+/* 
 ul.working li::marker {
   content: "⚒️";
 }
@@ -92,15 +101,15 @@ ul.reading li::marker {
 
 ul.tinkering li::marker {
   content: "🤖";
-}
+} */
 
-.list li{
+.list li {
   padding-left: 4px;
   margin-bottom: 14px;
 }
 
 hr {
-  border-color: var(--theme-foreground);
+  border-color: var(--theme-accent);
   margin: 4rem 0;
 }
 .about-me {
@@ -109,7 +118,9 @@ hr {
   flex-direction: column;
   align-items: center;
 }
-
+.lately-holder a {
+  font-weight: 200;
+}
 @media screen and (min-width: 800px) {
   .lately-holder {
     display: grid;
@@ -128,10 +139,10 @@ hr {
 }
 
 a {
-  color: var(--theme-accent);
+  color: var(--theme-secondary);
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
-  text-decoration-color: var(--theme-accent);
+  text-decoration-color: var(--theme-secondary);
   font-weight: 300;
   transition: text-decoration-color 0.3s var(--animation-transform);
 }
@@ -157,7 +168,7 @@ b {
   max-width: 550px;
 }
 .contact-form label {
-  color: var(--theme-accent);
+  color: var(--theme-secondary);
   margin-bottom: 4px;
   margin-top: 1rem;
   font-weight: 300;
@@ -189,7 +200,7 @@ textarea {
 
 button {
   -webkit-appearance: button;
-  background-color: var(--theme-accent);
+  background-color: var(--theme-secondary);
   border: none;
   padding: 0.8rem;
   border-radius: 8px;
@@ -200,18 +211,20 @@ button {
   cursor: pointer;
 }
 
-.pill, a.pill {
+.pill,
+a.pill {
   font-size: 0.875rem;
-  /* font-weight: 700; */
   font-variation-settings: "wght" 300;
   text-decoration: none;
   display: inline-block;
   color: var(--theme-foreground);
-  border: 1px solid var(--theme-foreground);
+  border: 1px solid var(--color-cyan-6);
+  background-color: #061e24;
   border-radius: 8px;
   margin: 12px;
   margin-left: 0;
-  padding: 4px;
+  line-height: 1;
+  padding: 0.5rem 1rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

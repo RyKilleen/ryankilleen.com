@@ -55,7 +55,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </a>
             </li>
             <li>
-              <a href="mailto:rykilleen@gmail.com" onClick={trackOutboundLink}>
+              <a href="mailto:ryan@ryankilleen.com" onClick={trackOutboundLink}>
                 Email
               </a>
             </li>
