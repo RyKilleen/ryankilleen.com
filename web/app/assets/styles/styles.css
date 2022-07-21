@@ -1,8 +1,8 @@
 :root {
   --color-dark-cyan: #07191d;
-  --color-cyan: #00c2d7;
+  --color-cyan: #2ec8ee;
   --color-cyan-6: #064150;
-  --color-cyan-light: #05a2c2;
+  --color-cyan-8: #00647d;
   --color-orange: #ff8b3e;
   --theme-background: var(--color-dark-cyan);
   --theme-foreground: var(--color-cyan);
