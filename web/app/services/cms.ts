@@ -1,11 +1,32 @@
 // import sanityClient from "@sanity/client";
 // @ts-ignore
 import sanityClient from "picosanity/lib/browser";
-export const client = sanityClient({
+
+const config = {
   projectId: "90sffhgh",
   dataset: "production",
   apiVersion: "2022-02-20", // use current UTC date - see "specifying API version"!
-  token:
-    "sk5ZE6klAPI5xw2qSFMpR9mMOl2AAE5fdJSc5arC7MEPLAq120yMDGwGTq4qD5qcwnXWNb0YM7oNW92YhLEqHnFYIFtCmGuIc5iBcVA26tfEJzVSS5tsJYL5JJjANwzkxmxhGd0wB9BzrIYWY0qDKjzR5XThLkBAwoOXV4GvKTYC4hcWPObU", // or leave blank for unauthenticated usage
   useCdn: true, // `false` if you want to ensure fresh data
+};
+const client = sanityClient(config);
+
+const previewClient = sanityClient({
+  ...config,
+  useCdn: false,
+  token: SANITY_API_TOKEN ?? "",
 });
+export const getClient = (usePreview = false) =>
+  usePreview ? previewClient : client;
+
+export const isPreviewEnabled = (request: Request) => {
+  const requestUrl = new URL(request?.url);
+  const preview =
+    requestUrl?.searchParams?.get("preview") === SANITY_PREVIEW_SECRET;
+
+  return preview;
+};
+
+export const getPreviewQuery = (request: Request) => {
+  const requestUrl = new URL(request.url);
+  return requestUrl?.searchParams?.get("preview");
+};

@@ -1,4 +1,8 @@
-import type { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
+import type {
+  LinksFunction,
+  LoaderFunction,
+  MetaFunction,
+} from "@remix-run/cloudflare";
 import {
   Links,
   LiveReload,
@@ -6,9 +10,11 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 
 import stylesUrl from "./assets/styles/styles.css";
+import { isPreviewEnabled } from "./services/cms";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -28,7 +34,24 @@ export let links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: stylesUrl }];
 };
 
+type LoaderData = {
+  isPreview: boolean;
+};
+
+export const loader: LoaderFunction = async ({
+  request,
+  params,
+  context,
+}): Promise<LoaderData> => {
+  const isPreview = isPreviewEnabled(request);
+
+  return {
+    isPreview,
+  };
+};
+
 export default function App() {
+  const { isPreview } = useLoaderData<LoaderData>();
   return (
     <html lang="en">
       <head>
@@ -37,6 +60,22 @@ export default function App() {
         <Links />
       </head>
       <body>
+        {isPreview && (
+          <div
+            style={{
+              backgroundColor: "#2ec8ee",
+              textAlign: "center",
+              color: "black",
+              marginLeft: "-5%",
+              marginRight: "-5%",
+              padding: "1rem",
+              position: "sticky",
+              top: 0,
+            }}
+          >
+            Preview mode!
+          </div>
+        )}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
