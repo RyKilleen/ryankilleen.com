@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Ryan Killeen <deathbypapercut@gmail.com>",
+  "author": "Ryan Killeen <ryan@ryankilleen.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "sanity start",
-    "build": "sanity build"
+    "start": "npx @sanity/cli start",
+    "build": "npx @sanity/cli build"
   },
   "keywords": [
     "sanity"

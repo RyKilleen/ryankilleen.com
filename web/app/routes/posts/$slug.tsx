@@ -8,7 +8,9 @@ import type {
   SanityImageObject,
   SanityAsset,
 } from "@sanity/image-url/lib/types/types";
-import Snippet from "~/components/code-snippet";
+import Snippet from "~/components/code-snippet.client";
+import { ClientOnly } from "remix-utils";
+import CodePlaceholder from "~/components/code-placeholder";
 
 type Slug = {
   current: string;
@@ -74,7 +76,9 @@ export default function PostSlug() {
           components={{
             types: {
               codeSnippet: ({ value: { language, code } }: any) => (
-                <Snippet language={language} code={code} />
+                <ClientOnly fallback={<CodePlaceholder code={code} />}>
+                  {() => <Snippet language={language} code={code} />}
+                </ClientOnly>
               ),
             },
           }}
@@ -83,6 +87,7 @@ export default function PostSlug() {
     </Layout>
   );
 }
+
 export function links() {
   return [
     {
