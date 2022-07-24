@@ -1,6 +1,5 @@
 name = "ryan-killeen-com"
 
-account_id = ""
 workers_dev = true
 main = "./build/index.js"
 # https://developers.cloudflare.com/workers/platform/compatibility-dates
@@ -11,3 +10,10 @@ compatibility_date = "2022-04-05"
 
 [build]
   command = "npm run build"
+
+[vars]
+
+# Necessary secrets
+# - SANITY_PREVIEW_SECRET
+# - SANITY_API_TOKEN
+# https://developers.cloudflare.com/workers/platform/environment-variables/#adding-secrets-via-wrangler

@@ -1,5 +1,5 @@
 import { useLoaderData } from "@remix-run/react";
-import { client } from "~/services/cms";
+import { getClient, isPreviewEnabled } from "~/services/cms";
 import { PortableText } from "@portabletext/react";
 import Layout from "~/components/layout";
 import styles from "~/assets/styles/article.css";
@@ -11,6 +11,7 @@ import type {
 import Snippet from "~/components/code-snippet.client";
 import { ClientOnly } from "remix-utils";
 import CodePlaceholder from "~/components/code-placeholder";
+import type { LoaderFunction } from "@remix-run/cloudflare";
 
 type Slug = {
   current: string;
@@ -32,7 +33,9 @@ export type Post = {
   categories: Category[];
 };
 
-export const loader = async ({ params }: { params: { slug: string } }) => {
+export const loader: LoaderFunction = async ({ request, params, context }) => {
+  const preview = isPreviewEnabled(request);
+  const client = getClient(preview);
   const post = await client.fetch(`
         *[_type == 'post' && slug.current == '${params.slug}'][0] {
           ...,

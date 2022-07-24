@@ -1,8 +1,9 @@
 import { useLoaderData } from "@remix-run/react";
 import Layout from "~/components/layout";
-import { client } from "../services/cms";
+import { getClient, isPreviewEnabled } from "../services/cms";
 import groupBy from "lodash/groupBy";
 import HeadshotURL from "../assets/images/headshot.webp";
+import type { LoaderFunction } from "@remix-run/cloudflare";
 
 type Interest = {
   title: string;
@@ -15,7 +16,9 @@ type Book = Interest & {
 };
 
 type FeaturedInterest = Interest | Book;
-export const loader = async () => {
+export const loader: LoaderFunction = async ({ request }) => {
+  const preview = isPreviewEnabled(request);
+  const client = getClient(preview);
   const interests = await client.fetch(`
       *[featured == true && (_type == 'interest' || _type== 'book')] {
         title,

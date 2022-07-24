@@ -1,31 +1,51 @@
 import { useLoaderData } from "@remix-run/react";
 import Layout from "~/components/layout";
-import { client } from "~/services/cms";
+import { getClient, getPreviewQuery, isPreviewEnabled } from "~/services/cms";
 import type { Post } from "~/routes/posts/$slug";
 import styles from "~/assets/styles/posts.css";
+import type { LoaderFunction } from "@remix-run/cloudflare";
 
-export const loader = async () => {
+type LoaderData = {
+  posts: Post[];
+  previewQuery?: string | null;
+};
+export const loader: LoaderFunction = async ({
+  request,
+}): Promise<LoaderData> => {
+  const preview = isPreviewEnabled(request);
+  const client = getClient(preview);
   const posts: Post[] = await client.fetch(`
-    *[_type == 'post' && !(_id in path("drafts.**"))] { 
+    *[_type == 'post' ] { 
         title,
         slug,
         "categories": categories[]->,
         publishedAt
     }
     `);
-  return [...posts];
+  return {
+    posts: [...posts],
+    previewQuery: preview ? getPreviewQuery(request) : undefined,
+  };
 };
 
 export default function Blog() {
-  const data: Post[] = useLoaderData();
+  const { posts, previewQuery } = useLoaderData<LoaderData>();
 
   return (
     <Layout>
       <h1>Posts</h1>
       <ul className="post-list">
-        {data.map((post) => (
+        {posts.map((post) => (
           <li key={post.slug.current}>
-            <a href={`/posts/${post?.slug?.current ?? ""}`}>{post.title}</a>
+            {post?.slug?.current && (
+              <a
+                href={`/posts/${post.slug.current}${
+                  previewQuery && "?preview=" + previewQuery
+                }`}
+              >
+                {post.title}
+              </a>
+            )}
             <div>
               <ul className="post-categories" aria-label="post categories">
                 {post.categories.map(({ slug, title }) => (
