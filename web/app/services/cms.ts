@@ -20,9 +20,10 @@ export const getClient = (usePreview = false) =>
 
 export const isPreviewEnabled = (request: Request) => {
   const requestUrl = new URL(request?.url);
+  console.log("checking preview secret", SANITY_PREVIEW_SECRET);
   const preview =
     requestUrl?.searchParams?.get("preview") === SANITY_PREVIEW_SECRET;
-
+  console.log("preview enabled:", preview);
   return preview;
 };
 
