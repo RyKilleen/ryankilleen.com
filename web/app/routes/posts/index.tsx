@@ -40,7 +40,7 @@ export default function Blog() {
             {post?.slug?.current && (
               <a
                 href={`/posts/${post.slug.current}${
-                  previewQuery && "?preview=" + previewQuery
+                  previewQuery ? "?preview=" + previewQuery : ''
                 }`}
               >
                 {post.title}
