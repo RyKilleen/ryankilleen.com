@@ -31,7 +31,7 @@ export const meta: MetaFunction = () => ({
  * https://remix.run/api/app#links
  */
 export let links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: stylesUrl }];
+  return [{ rel: "stylesheet", href: stylesUrl }, {rel:'alternate', type: 'application/rss+xml', href:'https://ryankilleen.com/rss'}];
 };
 
 type LoaderData = {

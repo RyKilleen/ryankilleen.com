@@ -17,6 +17,7 @@
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",
     "cross-env": "^7.0.3",
+    "feed": "^4.2.2",
     "lodash": "^4.17.21",
     "picosanity": "^4.0.0",
     "react": "^17.0.2",
