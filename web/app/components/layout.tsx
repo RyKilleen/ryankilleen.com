@@ -71,11 +71,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </li>
             <li>
               <a 
-                rel="me" 
+                rel="me noopener noreferrer"
                 href="https://hachyderm.io/@ryan"  
                 onClick={trackOutboundLink}
                 target="_blank"
-                rel="noopener noreferrer"
                >
                 Mastodon
               </a>
