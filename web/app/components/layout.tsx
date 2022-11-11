@@ -73,7 +73,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <a 
                 rel="me" 
                 href="https://hachyderm.io/@ryan"  
-                onClick={trackOutboundLink} ]
+                onClick={trackOutboundLink}
                 target="_blank"
                 rel="noopener noreferrer"
                >
