@@ -69,6 +69,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 Resume
               </a>
             </li>
+            <li>
+              <a 
+                rel="me" 
+                href="https://hachyderm.io/@ryan"  
+                onClick={trackOutboundLink} ]
+                target="_blank"
+                rel="noopener noreferrer"
+               >
+                Mastodon
+              </a>
+            </li>
           </ul>
         </nav>
         <p>This website is best viewed on an electronic device.</p>
