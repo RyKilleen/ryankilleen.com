@@ -15,6 +15,7 @@ import {
 
 import stylesUrl from "./assets/styles/styles.css";
 import { isPreviewEnabled } from "./services/cms";
+import { globalStyles } from "./theme/stitches.config";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -31,8 +32,19 @@ export const meta: MetaFunction = () => ({
  * https://remix.run/api/app#links
  */
 export let links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: stylesUrl }, {rel:'alternate', type: 'application/rss+xml', href:'https://ryankilleen.com/rss'}];
+  return [
+    { rel: "stylesheet", href: stylesUrl },
+    { rel: 'alternate', type: 'application/rss+xml', href: 'https://ryankilleen.com/rss' },
+    { rel: 'preconnect', href: "https://fonts.googleapis.com" },
+    { rel: 'preconnect', href: "https://fonts.gstatic.com", crossOrigin: true },
+
+  ];
 };
+/**
+ * <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
+ */
 
 type LoaderData = {
   isPreview: boolean;
@@ -51,6 +63,7 @@ export const loader: LoaderFunction = async ({
 };
 
 export default function App() {
+  globalStyles()
   const { isPreview } = useLoaderData<LoaderData>();
   return (
     <html lang="en">

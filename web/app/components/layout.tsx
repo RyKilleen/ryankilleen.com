@@ -3,6 +3,7 @@ import { Link } from "@remix-run/react";
 import { trackOutboundLink } from "../services/analytics";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+
   return (
     <>
       <header

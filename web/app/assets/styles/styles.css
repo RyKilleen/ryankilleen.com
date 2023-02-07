@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --color-dark-cyan: #07191d;
   --color-cyan: #2ec8ee;
   --color-cyan-6: #064150;
@@ -94,25 +94,10 @@ p {
 
 section {
   margin-bottom: 2rem;
-}
-/* 
-ul.working li::marker {
-  content: "⚒️";
-}
-
-ul.dabbling li::marker {
-  content: "🧪";
-}
-
-ul.reading li::marker {
-  content: "📖";
-}
-
-ul.tinkering li::marker {
-  content: "🤖";
 } */
 
-.list li {
+
+/* .list li {
   padding-left: 4px;
   margin-bottom: 14px;
 }
@@ -235,7 +220,7 @@ a.pill {
   line-height: 1;
   padding: 0.5rem 1rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
+} */
 
 /* .pill:hover, .pill:focus {
   font-variation-settings: "wght" 700;

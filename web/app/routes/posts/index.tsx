@@ -4,6 +4,8 @@ import { getClient, getPreviewQuery, isPreviewEnabled } from "~/services/cms";
 import type { Post } from "~/routes/posts/$slug";
 import styles from "~/assets/styles/posts.css";
 import type { LoaderFunction } from "@remix-run/cloudflare";
+import { H1 } from "~/components/typography";
+import { Pill } from "~/components/pill";
 
 type LoaderData = {
   posts: Post[];
@@ -33,15 +35,14 @@ export default function Blog() {
 
   return (
     <Layout>
-      <h1>Posts</h1>
+      <H1>Posts</H1>
       <ul className="post-list">
         {posts.map((post) => (
           <li key={post.slug.current}>
             {post?.slug?.current && (
               <a
-                href={`/posts/${post.slug.current}${
-                  previewQuery ? "?preview=" + previewQuery : ''
-                }`}
+                href={`/posts/${post.slug.current}${previewQuery ? "?preview=" + previewQuery : ''
+                  }`}
               >
                 {post.title}
               </a>
@@ -50,13 +51,13 @@ export default function Blog() {
               <ul className="post-categories" aria-label="post categories">
                 {post.categories.map(({ slug, title }) => (
                   <li key={title}>
-                    <a
+                    <Pill
                       style={{ cursor: "default" }}
                       // href={`/category/${slug.current}`}
                       className="pill post-category"
                     >
                       {title}
-                    </a>
+                    </Pill>
                   </li>
                 ))}
               </ul>

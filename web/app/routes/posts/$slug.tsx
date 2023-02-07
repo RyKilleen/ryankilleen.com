@@ -51,6 +51,7 @@ export const loader: LoaderFunction = async ({ request, params, context }) => {
 export default function PostSlug() {
   const post: Post = useLoaderData();
   const { publishedAt, title, body, mainImage } = post;
+  console.log(post);
   const options: Intl.DateTimeFormatOptions = {
     month: "short",
     day: "numeric",
@@ -62,18 +63,45 @@ export default function PostSlug() {
     new Date(publishedAt)
   );
 
+  const paletteObject = mainImage.asset?.metadata.palette.darkVibrant;
   return (
     <Layout>
       <article>
-        <h1 className="small">{title}</h1>
-        <div className="published-at">
-          Published <time dateTime={publishedAt}>{publishDateAsText}</time>
-        </div>
-        {/* <img
-          src={`${mainImage.asset?.url}?auto=format` ?? ""}
-          width="1024"
-          style={{ aspectRatio: "16/9" }}
-        /> */}
+        <header style={{
+          position: 'relative',
+          backgroundImage: `url(${mainImage.asset?.url}?auto=format)`,
+          backgroundSize: 'cover',
+          marginBottom: '1rem',
+          height: '700px',
+          maxHeight: '70vh'
+        }}>
+          <img
+            src={`${mainImage.asset?.url}?auto=format` ?? ""}
+            style={{
+              objectFit: 'cover',
+              width: '100%',
+              height: '100%',
+              position: 'absolute'
+            }}
+          />
+          <div style={{
+            zIndex: 1,
+            border: `6px solid ${paletteObject?.background}`,
+            backdropFilter: 'blur(4px)',
+            backgroundColor: `${paletteObject?.background}`,
+            color: paletteObject?.foreground,
+            position: "absolute",
+            bottom: "-1rem",
+            left: '-1rem',
+            width: '90%',
+            padding: '6px'
+          }}>
+            <h1 className="small" style={{ marginTop: 0 }}>{title}</h1>
+            <div className="published-at">
+              Published <time dateTime={publishedAt}>{publishDateAsText}</time>
+            </div>
+          </div>
+        </header>
         <PortableText
           value={body}
           components={{
@@ -87,7 +115,7 @@ export default function PostSlug() {
           }}
         />
       </article>
-    </Layout>
+    </Layout >
   );
 }
 
