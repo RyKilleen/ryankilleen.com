@@ -8,6 +8,7 @@
  *    type: 'blockContent'
  *  }
  */
+import 'ace-builds/src-noconflict/ace';
 import "ace-builds/src-noconflict/mode-rust";
 import "ace-builds/src-noconflict/mode-diff";
 import "ace-builds/src-noconflict/mode-typescript";
@@ -71,10 +72,9 @@ export default {
       type: "code",
       options: {
         theme: "solarized_dark",
-        // language: "tsx",
         languageAlternatives: [
           { title: "React (TS)", value: "tsx" },
-          { title: "TypeScript", value: "ts", mode: "typescript", },
+          { title: "TypeScript", value: "ts", mode: "typescript" },
           { title: "Javascript", value: "js" },
           {
             title: "Rust",
