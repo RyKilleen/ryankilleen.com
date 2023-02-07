@@ -10,6 +10,7 @@
  */
 import "ace-builds/src-noconflict/mode-rust";
 import "ace-builds/src-noconflict/mode-diff";
+import "ace-builds/src-noconflict/mode-typescript";
 
 export default {
   title: "Block Content",
@@ -73,7 +74,7 @@ export default {
         // language: "tsx",
         languageAlternatives: [
           { title: "React (TS)", value: "tsx" },
-          { title: "TypeScript", value: "ts" },
+          { title: "TypeScript", value: "ts", mode: "typescript", },
           { title: "Javascript", value: "js" },
           {
             title: "Rust",
