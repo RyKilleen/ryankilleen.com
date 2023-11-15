@@ -56,8 +56,8 @@ export default function Index() {
           <div>
             <p>
               Ryan enjoys working on the web, learning, teaching, and tinkering.
-              Currently, he is a Senior Front End Engineer at{" "}
-              <a href="https://www.mantl.com/">MANTL</a>
+              Currently, he is the Lead Frontend Engineer at{" "}
+              <a href="https://cognitioncontrols.com/">Cognition Controls</a>
             </p>
             <p>Always a work in progress.</p>
           </div>
