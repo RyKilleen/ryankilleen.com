@@ -4,6 +4,7 @@ const eleventyNavigation = {
 	order: 3
 };
 ---
+
 # About
 
-I am a person that writes stuff.
+Ryan enjoys working on the web, learning new things, and tinkering.
