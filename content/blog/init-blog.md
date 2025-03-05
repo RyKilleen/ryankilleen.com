@@ -1,7 +1,7 @@
 ---
 title: Brand New Me
 description: All good blog posts are about restarting your blog
-date: 2025-05-04
+date: 2025-03-04
 tags: intro
 ---
 
@@ -46,4 +46,3 @@ It's truly making a comeback, at least in my life (blog to come!) And you guesse
 I've barely scratched the surface of the 11ty community (and my own journey in blogging.)
 
 I hope this lowers the barrier of entry to writing posts. I'm excited to learn in public and give back to the community that has helped me for many years.
-
