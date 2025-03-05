@@ -7,4 +7,6 @@ const eleventyNavigation = {
 
 # About
 
-Ryan enjoys working on the web, learning new things, and tinkering.
+Ryan enjoys working on the web, learning new things, speaking to people about their passions, and tinkering on his self-hosting setup.
+
+He resides on Earth with his partner and dog.

@@ -60,7 +60,7 @@ export default async function (eleventyConfig) {
     stylesheet: "pretty-atom-feed.xsl",
     templateData: {
       eleventyNavigation: {
-        key: "Feed",
+        key: "RSS Feed",
         order: 4,
       },
     },
@@ -70,11 +70,11 @@ export default async function (eleventyConfig) {
     },
     metadata: {
       language: "en",
-      title: "Blog Title",
-      subtitle: "This is a longer description about your blog.",
-      base: "https://example.com/",
+      title: "Ryan Killeen - Web Developer, Among Other Things",
+      subtitle: "A personal blog documenting webdev, life with ADHD, home cooking, self-hosting, and much more",
+      base: "https://ryankilleen.com/",
       author: {
-        name: "Your Name",
+        name: "Ryan Killeen",
       },
     },
   });

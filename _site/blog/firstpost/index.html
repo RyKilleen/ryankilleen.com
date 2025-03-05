@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>This is my first post.</title>
-		<meta name="description" content="This is a post on My Blog about agile frameworks.">
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Eleventy Base Blog v9">
+		<title>Brand New Me (draft)</title>
+		<meta name="description" content="All good blog posts are about restarting your blog">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Ryan Killeen - Web Developer, Among Other Things">
 		
 		<style>/**
  * okaidia theme for JavaScript, CSS and HTML
@@ -178,79 +178,80 @@ pre[class*="language-diff-"] {
 /* This is an arbitrary CSS string added to the bundle */
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+  --font-family: -apple-system, system-ui, sans-serif;
+  --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+    Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+    Courier, monospace;
 }
 
 /* Theme colors */
 :root {
-	--color-gray-20: #e0e0e0;
-	--color-gray-50: #C0C0C0;
-	--color-gray-90: #333;
+  --color-gray-20: #e0e0e0;
+  --color-gray-50: #c0c0c0;
+  --color-gray-90: #333;
 
-	--background-color: #fff;
+  --background-color: hsl(157, 40%, 86%);
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050F;
+  --text-color: var(--color-gray-90);
+  --text-color-link: hsl(157, 100%, 20%);
+  --text-color-link-active: #2b5f5f;
+  --text-color-link-visited: hsl(157 12% 30% / 1);
 
-	--syntax-tab-size: 2;
+  --syntax-tab-size: 2;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-gray-20: #e0e0e0;
+    --color-gray-50: #c0c0c0;
+    --color-gray-90: #dad8d8;
 
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
+    --text-color-link: #1493fb;
+    --text-color-link-active: #6969f7;
+    --text-color-link-visited: #a6a6f8;
 
-		--background-color: #15202b;
-	}
-}
-
+    --background-color: hsl(157 69% 6% / 1);
+  }
+} */
 
 /* Global stylesheet */
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @view-transition {
-	navigation: auto;
+  navigation: auto;
 }
 
 html,
 body {
-	padding: 0;
-	margin: 0 auto;
-	font-family: var(--font-family);
-	color: var(--text-color);
-	background-color: var(--background-color);
+  padding: 0;
+  margin: 0 auto;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 html {
-	overflow-y: scroll;
+  overflow-y: scroll;
 }
 body {
-	max-width: 40em;
+  max-width: 40em;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 /* Fluid images via https://www.zachleat.com/web/fluid-images/ */
-img{
+img {
   max-width: 100%;
 }
 img[width][height] {
@@ -263,203 +264,203 @@ img[src$=".svg"] {
 }
 video,
 iframe {
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 iframe {
-	aspect-ratio: 16/9;
+  aspect-ratio: 16/9;
 }
 
 p:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 p {
-	line-height: 1.5;
+  line-height: 1.5;
 }
 
 li {
-	line-height: 1.5;
+  line-height: 1.5;
 }
 
 a[href] {
-	color: var(--text-color-link);
+  color: var(--text-color-link);
 }
 a[href]:visited {
-	color: var(--text-color-link-visited);
+  color: var(--text-color-link-visited);
 }
 a[href]:hover,
 a[href]:active {
-	color: var(--text-color-link-active);
+  color: var(--text-color-link-active);
 }
 
 main,
 footer {
-	padding: 1rem;
+  padding: 1rem;
 }
 main :first-child {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 header {
-	border-bottom: 1px dashed var(--color-gray-20);
+  border-bottom: 1px dashed var(--color-gray-20);
 }
 
 .links-nextprev {
-	display: flex;
-	justify-content: space-between;
-	gap: .5em 1em;
-	list-style: "";
-	border-top: 1px dashed var(--color-gray-20);
-	padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em 1em;
+  list-style: "";
+  border-top: 1px dashed var(--color-gray-20);
+  padding: 1em 0;
 }
 .links-nextprev > * {
-	flex-grow: 1;
+  flex-grow: 1;
 }
 .links-nextprev-next {
-	text-align: right;
+  text-align: right;
 }
 
 table {
-	margin: 1em 0;
+  margin: 1em 0;
 }
 table td,
 table th {
-	padding-right: 1em;
+  padding-right: 1em;
 }
 
 pre,
 code {
-	font-family: var(--font-family-monospace);
+  font-family: var(--font-family-monospace);
 }
 pre:not([class*="language-"]) {
-	margin: .5em 0;
-	line-height: 1.375; /* 22px /16 */
-	-moz-tab-size: var(--syntax-tab-size);
-	-o-tab-size: var(--syntax-tab-size);
-	tab-size: var(--syntax-tab-size);
-	-webkit-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	overflow-x: auto;
+  margin: 0.5em 0;
+  line-height: 1.375; /* 22px /16 */
+  -moz-tab-size: var(--syntax-tab-size);
+  -o-tab-size: var(--syntax-tab-size);
+  tab-size: var(--syntax-tab-size);
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  overflow-x: auto;
 }
 code {
-	word-break: break-all;
+  word-break: break-all;
 }
 
 /* Header */
 header {
-	display: flex;
-	gap: 1em;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1em;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
 }
 .home-link {
-	flex-grow: 1;
-	font-size: 1em; /* 16px /16 */
-	font-weight: 700;
+  flex-grow: 1;
+  font-size: 1em; /* 16px /16 */
+  font-weight: 700;
 }
 .home-link:link:not(:hover) {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /* Nav */
 .nav {
-	display: flex;
-	gap: .5em 1em;
-	padding: 0;
-	margin: 0;
-	list-style: none;
+  display: flex;
+  gap: 0.5em 1em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 .nav-item {
-	display: inline-block;
+  display: inline-block;
 }
 .nav-item a[href]:not(:hover) {
-	text-decoration: none;
+  text-decoration: none;
 }
 .nav a[href][aria-current="page"] {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Posts list */
 .postlist {
-	list-style: none;
-	padding: 0;
-	padding-left: 1.5rem;
+  list-style: none;
+  padding: 0;
+  padding-left: 1.5rem;
 }
 .postlist-item {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: baseline;
-	counter-increment: start-from -1;
-	margin-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  counter-increment: start-from -1;
+  margin-bottom: 1em;
 }
 .postlist-item:before {
-	display: inline-block;
-	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
-	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
+  display: inline-block;
+  pointer-events: none;
+  content: "" counter(start-from, decimal-leading-zero) ". ";
+  line-height: 100%;
+  text-align: right;
+  margin-left: -1.5rem;
 }
 .postlist-date,
 .postlist-item:before {
-	font-size: 0.8125em; /* 13px /16 */
-	color: var(--color-gray-90);
+  font-size: 0.8125em; /* 13px /16 */
+  color: var(--color-gray-90);
 }
 .postlist-date {
-	word-spacing: -0.5px;
+  word-spacing: -0.5px;
 }
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
-	font-weight: 700;
-	flex-basis: calc(100% - 1.5rem);
-	padding-left: .25em;
-	padding-right: .5em;
-	text-underline-position: from-font;
-	text-underline-offset: 0;
-	text-decoration-thickness: 1px;
+  font-size: 1.1875em; /* 19px /16 */
+  font-weight: 700;
+  flex-basis: calc(100% - 1.5rem);
+  padding-left: 0.25em;
+  padding-right: 0.5em;
+  text-underline-position: from-font;
+  text-underline-offset: 0;
+  text-decoration-thickness: 1px;
 }
 .postlist-item-active .postlist-link {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 /* Tags */
 .post-tag {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	text-transform: capitalize;
-	font-style: italic;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-style: italic;
 }
 .postlist-item > .post-tag {
-	align-self: center;
+  align-self: center;
 }
 
 /* Tags list */
 .post-metadata {
-	display: inline-flex;
-	flex-wrap: wrap;
-	gap: .5em;
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .post-metadata time {
-	margin-right: 1em;
+  margin-right: 1em;
 }</style>
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<a href="/" class="home-link">Eleventy Base Blog v9</a>
+			<a href="/" class="home-link">Ryan Killeen - Web Developer, Among Other Things</a>
 			<nav>
 				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
 				<ul class="nav">
@@ -474,30 +475,38 @@ header {
 		<main id="skip">
 			<heading-anchors>
 				
-<h1 id="this-is-my-first-post">This is my first post.</h1>
+<h1 id="brand-new-me-draft">Brand New Me (draft)</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2018-05-01">01 May 2018</time></li>
-	<li><a href="/tags/another-tag/" class="post-tag">another tag</a></li>
+	<li><time datetime="2025-05-04">04 May 2025</time></li>
+	<li><a href="/tags/intro/" class="post-tag">intro</a></li>
 </ul>
 
-<p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
-<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-<h2 id="section-header">Section Header</h2>
-<p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-<pre class="language-diff-js" tabindex="0"><code class="language-diff-js"><span class="token unchanged language-js"><span class="token prefix unchanged"> </span><span class="token comment">// this is a command</span>
-<span class="token prefix unchanged"> </span><span class="token keyword">function</span> <span class="token function">myCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-</span><span class="token inserted-sign inserted language-js"><span class="token prefix inserted">+</span>  <span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-</span><span class="token deleted-sign deleted language-js"><span class="token prefix deleted">-</span>  <span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-</span><span class="token unchanged language-js"><span class="token prefix unchanged"> </span>  counter<span class="token operator">++</span><span class="token punctuation">;</span>
-<span class="token prefix unchanged"> </span><span class="token punctuation">}</span>
-</span>
-<span class="token unchanged language-js"><span class="token prefix unchanged"> </span><span class="token comment">// Test with a line break above this line.</span>
-<span class="token prefix unchanged"> </span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Test'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</span></code></pre>
-
-<ul class="links-nextprev"><li class="links-nextprev-next">Next →<br><a href="/blog/secondpost/">This is my second post with a much longer title.</a></li>
+<p>I've gone and done it again. A blog refresh. Starting from scratch. Why? It's my party, and I can refactor if I want to. In reality, it boils down to a few reasons!</p>
+<h2 id="a-return-to-simplicity">A Return to Simplicity</h2>
+<p>The web has trended towards over-engineered solutions. I'm far from <a href="http://localhost:8080/blog/firstpost/#good-ole-html">alone</a> in this opinion!</p>
+<h3 id="platform">Platform</h3>
+<p>The last iteration of my site served as a way to familiarize myself with <a href="https://sanity.io">Sanity CMS</a>, a wonderful CMS platform for many applications. But in my case, it was overkill! I'm a singular person, without a content team or the need for complex content management approachs.</p>
+<h3 id="framework-fatigue">Framework fatigue</h3>
+<p>I wanted to return to my roots and shed the over-engineered JS frameworks. All of it feels overkill for my personal site's needs:</p>
+<ul>
+<li>My content isn't very dynamic</li>
+<li>My content is very light-weight: text and photos</li>
+<li>I'm comfortable using Markdown</li>
 </ul>
+<p>A static generator is perfect for a site that receives updates once a month!</p>
+<h2 id="community">Community</h2>
+<p>The webdev community is beloved to me, and the only reason I have a career in web development. I am not self-taught, I am community-raised. And let me tell you, my community loves Eleventy.</p>
+<h2 id="features">Features</h2>
+<h3 id="sweet-sweet-syntax-highlighting">Sweet, sweet syntax highlighting</h3>
+<p>Being a developer, syntax highlighting on my blog is important to me! My prior Sanity CMS setup had an implementation, but I had to set up each language as one-offs. This was often the final roadblock between me authoring a post or not.</p>
+<p>That's all possible through the <a href="https://www.11ty.dev/docs/plugins/syntaxhighlight/"><code>eleventy-plugin-syntaxhighlight</code></a> plugin implementing <a href="https://prismjs.com">PrismJS</a>!</p>
+<h3 id="rss-everywhere">RSS Everywhere</h3>
+<p>It's truly making a comeback, at least in my life (blog to come!) And you guessed it, there's an official <a href="https://www.11ty.dev/docs/plugins/rss/">an RSS plugin</a> ready to go.</p>
+<h3 id="and-more-to-come">And More to Come</h3>
+<p>I've barely scratched the surface of the 11ty community (and my own journey in blogging.)</p>
+<p>I hope this lowers the barrier of entry to writing posts. I'm excited to learn in public and give back to the community that has helped me for many years.</p>
+
 
 			</heading-anchors>
 		</main>
@@ -506,7 +515,7 @@ header {
 			<p><em>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a></em></p>
 		</footer>
 
-		<!-- This page `/blog/firstpost/` was built on 2025-03-04T21:15:47.285Z -->
+		<!-- This page `/blog/firstpost/` was built on 2025-03-05T01:45:33.822Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
