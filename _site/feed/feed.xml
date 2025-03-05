@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="pretty-atom-feed.xsl" type="text/xsl"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-  <title>Ryan Killeen - Web Developer, Among Other Things</title>
-  <subtitle>A personal blog documenting webdev, life with ADHD, home cooking, self-hosting, and much more</subtitle>
-  <link href="https://ryankilleen.com/feed/feed.xml" rel="self" />
-  <link href="https://ryankilleen.com/" />
-  <updated>2025-05-04T00:00:00Z</updated>
-  <id>https://ryankilleen.com/</id>
-  <author>
-    <name>Ryan Killeen</name>
-  </author>
-  <entry>
-    <title>Brand New Me</title>
-    <link href="https://ryankilleen.com/blog/init-blog/" />
-    <updated>2025-05-04T00:00:00Z</updated>
-    <id>https://ryankilleen.com/blog/init-blog/</id>
-    <content type="html">&lt;p&gt;I&#39;ve gone and done it again. A blog refresh. Starting from scratch. Why? It&#39;s my party, and I can refactor if I want to. In reality, it boils down to a few reasons!&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="https://ryankilleen.com/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ryan Killeen - Web Developer, Among Other Things</title>
+    <link>https://ryankilleen.com/</link>
+    <atom:link href="https://ryankilleen.com/feed/feed.xml" rel="self" type="application/rss+xml" />
+    <description>A personal blog documenting webdev, life with ADHD, home cooking, self-hosting, and much more</description>
+    <language>en</language>
+    <item>
+      <title>Brand New Me</title>
+      <link>https://ryankilleen.com/blog/init-blog/</link>
+      <description>&lt;p&gt;I&#39;ve gone and done it again. A blog refresh. Starting from scratch. Why? It&#39;s my party, and I can refactor if I want to. In reality, it boils down to a few reasons!&lt;/p&gt;
 &lt;h2 id=&quot;a-return-to-simplicity&quot;&gt;A Return to Simplicity&lt;/h2&gt;
 &lt;p&gt;The web has trended towards over-engineered solutions. I&#39;m far from &lt;a href=&quot;http://localhost:8080/blog/firstpost/#good-ole-html&quot;&gt;alone&lt;/a&gt; in this opinion!&lt;/p&gt;
 &lt;h3 id=&quot;platform&quot;&gt;Platform&lt;/h3&gt;
@@ -39,6 +34,10 @@
 &lt;h3 id=&quot;and-more-to-come&quot;&gt;And More to Come&lt;/h3&gt;
 &lt;p&gt;I&#39;ve barely scratched the surface of the 11ty community (and my own journey in blogging.)&lt;/p&gt;
 &lt;p&gt;I hope this lowers the barrier of entry to writing posts. I&#39;m excited to learn in public and give back to the community that has helped me for many years.&lt;/p&gt;
-</content>
-  </entry>
-</feed>
+</description>
+      <pubDate>Thu, 03 Apr 2025 20:00:00 EDT</pubDate>
+      <dc:creator>Ryan Killeen</dc:creator>
+      <guid>https://ryankilleen.com/blog/init-blog/</guid>
+    </item>
+  </channel>
+</rss>
