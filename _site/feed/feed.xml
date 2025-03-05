@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="pretty-atom-feed.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Ryan Killeen - Web Developer, Among Other Things</title>
+  <subtitle>A personal blog documenting webdev, life with ADHD, home cooking, self-hosting, and much more</subtitle>
+  <link href="https://ryankilleen.com/feed/feed.xml" rel="self" />
+  <link href="https://ryankilleen.com/" />
+  <updated>2025-05-04T00:00:00Z</updated>
+  <id>https://ryankilleen.com/</id>
+  <author>
+    <name>Ryan Killeen</name>
+  </author>
+  <entry>
+    <title>Brand New Me</title>
+    <link href="https://ryankilleen.com/blog/init-blog/" />
+    <updated>2025-05-04T00:00:00Z</updated>
+    <id>https://ryankilleen.com/blog/init-blog/</id>
+    <content type="html">&lt;p&gt;I&#39;ve gone and done it again. A blog refresh. Starting from scratch. Why? It&#39;s my party, and I can refactor if I want to. In reality, it boils down to a few reasons!&lt;/p&gt;
+&lt;h2 id=&quot;a-return-to-simplicity&quot;&gt;A Return to Simplicity&lt;/h2&gt;
+&lt;p&gt;The web has trended towards over-engineered solutions. I&#39;m far from &lt;a href=&quot;http://localhost:8080/blog/firstpost/#good-ole-html&quot;&gt;alone&lt;/a&gt; in this opinion!&lt;/p&gt;
+&lt;h3 id=&quot;platform&quot;&gt;Platform&lt;/h3&gt;
+&lt;p&gt;The last iteration of my site served as a way to familiarize myself with &lt;a href=&quot;https://sanity.io&quot;&gt;Sanity CMS&lt;/a&gt;, a wonderful CMS platform for many applications. But in my case, it was overkill! I&#39;m a singular person, without a content team or the need for complex content management approachs.&lt;/p&gt;
+&lt;h3 id=&quot;framework-fatigue&quot;&gt;Framework fatigue&lt;/h3&gt;
+&lt;p&gt;I wanted to return to my roots and shed the over-engineered JS frameworks. All of it feels overkill for my personal site&#39;s needs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My content isn&#39;t very dynamic&lt;/li&gt;
+&lt;li&gt;My content is very light-weight: text and photos&lt;/li&gt;
+&lt;li&gt;I&#39;m comfortable using Markdown&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A static generator is perfect for a site that receives updates once a month!&lt;/p&gt;
+&lt;h2 id=&quot;community&quot;&gt;Community&lt;/h2&gt;
+&lt;p&gt;The webdev community is beloved to me, and the only reason I have a career in web development. I am not self-taught, I am community-raised. And let me tell you, my community loves Eleventy.&lt;/p&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;h3 id=&quot;sweet-sweet-syntax-highlighting&quot;&gt;Sweet, sweet syntax highlighting&lt;/h3&gt;
+&lt;p&gt;Being a developer, syntax highlighting on my blog is important to me! My prior Sanity CMS setup had an implementation, but I had to set up each language as one-offs. This was often the final roadblock between me authoring a post or not.&lt;/p&gt;
+&lt;p&gt;That&#39;s all possible through the &lt;a href=&quot;https://www.11ty.dev/docs/plugins/syntaxhighlight/&quot;&gt;&lt;code&gt;eleventy-plugin-syntaxhighlight&lt;/code&gt;&lt;/a&gt; plugin implementing &lt;a href=&quot;https://prismjs.com&quot;&gt;PrismJS&lt;/a&gt;!&lt;/p&gt;
+&lt;h3 id=&quot;rss-everywhere&quot;&gt;RSS Everywhere&lt;/h3&gt;
+&lt;p&gt;It&#39;s truly making a comeback, at least in my life (blog to come!) And you guessed it, there&#39;s an official &lt;a href=&quot;https://www.11ty.dev/docs/plugins/rss/&quot;&gt;an RSS plugin&lt;/a&gt; ready to go.&lt;/p&gt;
+&lt;h3 id=&quot;and-more-to-come&quot;&gt;And More to Come&lt;/h3&gt;
+&lt;p&gt;I&#39;ve barely scratched the surface of the 11ty community (and my own journey in blogging.)&lt;/p&gt;
+&lt;p&gt;I hope this lowers the barrier of entry to writing posts. I&#39;m excited to learn in public and give back to the community that has helped me for many years.&lt;/p&gt;
+</content>
+  </entry>
+</feed>
