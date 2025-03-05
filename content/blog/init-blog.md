@@ -1,7 +1,7 @@
 ---
 title: Brand New Me
 description: All good blog posts are about restarting your blog
-date: 2025-05-04
+date: 2025-04-04
 tags: intro
 ---
 
