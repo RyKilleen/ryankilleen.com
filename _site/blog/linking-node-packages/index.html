@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Brand New Me</title>
-		<meta name="description" content="All good blog posts are about restarting your blog">
+		<title>Linking local node packages for development in PNPM</title>
+		<meta name="description" content="A personal blog documenting webdev, life with ADHD, home cooking, self-hosting, and much more">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Ryan Killeen - Web Developer, Among Other Things">
 		
 		<style>/**
@@ -488,39 +488,54 @@ header {
 		<main id="skip">
 			<heading-anchors>
 				
-<h1 id="brand-new-me">Brand New Me</h1>
+<h1 id="linking-local-node-packages-for-development-in-pnpm">Linking local node packages for development in PNPM</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2025-03-04">04 March 2025</time></li>
-	<li><a href="/tags/intro/" class="post-tag">intro</a></li>
+	<li><time datetime="2025-03-05">05 March 2025</time></li>
+	<li><a href="/tags/pnpm-npm-js-node/" class="post-tag">pnpm, npm, js, node</a></li>
 </ul>
 
-<p>I've gone and done it again. A blog refresh. Starting from scratch. Why? It's my party, and I can refactor if I want to. In reality, it boils down to a few reasons!</p>
-<h2 id="a-return-to-simplicity">A Return to Simplicity</h2>
-<p>The web has trended towards over-engineered solutions. I'm far from <a href="http://localhost:8080/blog/firstpost/#good-ole-html">alone</a> in this opinion!</p>
-<h3 id="platform">Platform</h3>
-<p>The last iteration of my site served as a way to familiarize myself with <a href="https://sanity.io">Sanity CMS</a>, a wonderful CMS platform for many applications. But in my case, it was overkill! I'm a singular person, without a content team or the need for complex content management approachs.</p>
-<h3 id="framework-fatigue">Framework fatigue</h3>
-<p>I wanted to return to my roots and shed the over-engineered JS frameworks. All of it feels overkill for my personal site's needs:</p>
-<ul>
-<li>My content isn't very dynamic</li>
-<li>My content is very light-weight: text and photos</li>
-<li>I'm comfortable using Markdown</li>
-</ul>
-<p>A static generator is perfect for a site that receives updates once a month!</p>
-<h2 id="community">Community</h2>
-<p>The webdev community is beloved to me, and the only reason I have a career in web development. I am not self-taught, I am community-raised. And let me tell you, my community loves Eleventy.</p>
-<h2 id="features">Features</h2>
-<h3 id="sweet-sweet-syntax-highlighting">Sweet, sweet syntax highlighting</h3>
-<p>Being a developer, syntax highlighting on my blog is important to me! My prior Sanity CMS setup had an implementation, but I had to set up each language as one-offs. This was often the final roadblock between me authoring a post or not.</p>
-<p>That's all possible through the <a href="https://www.11ty.dev/docs/plugins/syntaxhighlight/"><code>eleventy-plugin-syntaxhighlight</code></a> plugin implementing <a href="https://prismjs.com">PrismJS</a>!</p>
-<h3 id="rss-everywhere">RSS Everywhere</h3>
-<p>It's truly making a comeback, at least in my life (blog to come!) And you guessed it, there's an official <a href="https://www.11ty.dev/docs/plugins/rss/">an RSS plugin</a> ready to go.</p>
-<h3 id="and-more-to-come">And More to Come</h3>
-<p>I've barely scratched the surface of the 11ty community (and my own journey in blogging.)</p>
-<p>I hope this lowers the barrier of entry to writing posts. I'm excited to learn in public and give back to the community that has helped me for many years.</p>
+<p>Today I wanted to contribute some changes to Eleventy's RSS plugin.</p>
+<p>When contributing changes to projects, it's important to make sure your changes work! I wanted to use the local copy of this site to confirm updates, but how to go about it?</p>
+<p>This is fairly well documented for folks who use <a href="https://docs.npmjs.com/cli/v9/commands/npm-link?v=true">npm</a> or <a href="https://pnpm.io/cli/link">pnpm</a>, but in the spirit of getting in the habit of sharing what I know, here we go.</p>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<p>Let's assume that you have an existing project that uses a package, and you've also cloned the repository for that package. In our case, I'll be referencing <code>@11ty/eleventy-plugin-rss</code>.</p>
+<h2 id="step-1-globally-link-the-package">Step 1: globally link the package</h2>
+<p>After cloning the package repository, we'll want to <code>cd</code> into that directory and globablly link the package.</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/Projects/community/eleventy-plugin-rss
+<span class="token function">pnpm</span> <span class="token function">link</span></code></pre>
+<p>Now this package can be referenced from anywhere on our local machine.</p>
+<h2 id="step-2-link-in-our-codebase">Step 2: Link in our codebase</h2>
+<p>We want to see the plugin's changes reflected in our blog project!</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/Projects/ryankilleen.com
+<span class="token function">pnpm</span> <span class="token function">link</span> @11ty/eleventy-plugin-rss</code></pre>
+<p>It's as simple as that! Now changes made in our local copy of the plugin will be reflected in our blog.</p>
+<h2 id="caveat">Caveat</h2>
+<p>It's worth noting that with this approach, you'll need to manually run <code>pnpm i</code> in your project to reflect changes made to the package. Maybe there's another way?</p>
+<h3 id="direct-linking-with-file-protocol">Direct Linking with File Protocol</h3>
+<p>We can use a different approach with the <a href="https://pnpm.io/cli/link#whats-the-difference-between-pnpm-link-and-using-the-file-protocol">file protocol</a>.</p>
+<p>As <code>pnpm</code>'s docs explain:</p>
+<blockquote>
+<p>When you use the file: protocol in dependencies, the linked package is hard-linked to your project node_modules, you can modify the source code of the linked package, and the changes will be reflected in your project.</p>
+</blockquote>
+<p>This means we won't need to run <code>pnpm i</code> to see changes reflected. In our instance, we still need to restart the Eleventy process to reflect changes in the output, so <strong>this approach won't make much of a difference</strong>.</p>
+<p>For the sake of completion, here's what that looks like! Adding the following entry to our <code>package.json</code> will directly link the package to our working directory instead of symlinking:</p>
+<pre class="language-json" tabindex="0"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"pnpm"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"overrides"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"@11ty/eleventy-plugin-rss"</span><span class="token operator">:</span> <span class="token string">"link:../community/eleventy-plugin-rss"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">pnpm</span> i</code></pre>
+<h2 id="cleanup">Cleanup</h2>
+<p>We don't want our project to look at our local copy of the plugin forever. Once we're done we can cleanup our links.</p>
+<p>To remove references in our blog project, we can simply run</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">pnpm</span> unlink</code></pre>
+<p>Because we globally linked the RSS package, we can run the following to remove it from the global space.</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">pnpm</span> uninstall <span class="token parameter variable">--global</span> @11ty/eleventy-plugin-rss</code></pre>
 
-<ul class="links-nextprev"><li class="links-nextprev-next">Next →<br><a href="/blog/first-contribution-to-eleventy/">Contributing to Eleventy (draft)</a></li>
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/first-contribution-to-eleventy/">Contributing to Eleventy (draft)</a></li>
 </ul>
 
 			</heading-anchors>
@@ -530,7 +545,7 @@ header {
 			<p><em>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a></em></p>
 		</footer>
 
-		<!-- This page `/blog/init-blog/` was built on 2025-03-05T18:06:10.113Z -->
+		<!-- This page `/blog/linking-node-packages/` was built on 2025-03-05T18:06:10.113Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>

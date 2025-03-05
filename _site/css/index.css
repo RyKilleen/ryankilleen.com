@@ -170,8 +170,21 @@ pre:not([class*="language-"]) {
   word-break: normal;
   overflow-x: auto;
 }
+code,
+blockquote {
+  background-color: hsl(157 33% 73% / 1);
+}
 code {
   word-break: break-all;
+  word-break: auto-phrase;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+blockquote {
+  padding: 1rem;
+  margin-inline-start: 1rem;
+  border-radius: 4px;
+  font-style: italic;
 }
 
 /* Header */

@@ -5,15 +5,68 @@
   <subtitle>A personal blog documenting webdev, life with ADHD, home cooking, self-hosting, and much more</subtitle>
   <link href="https://ryankilleen.com/feed/feed.xml" rel="self" />
   <link href="https://ryankilleen.com/" />
-  <updated>2025-05-04T00:00:00Z</updated>
+  <updated>2025-03-05T00:00:00Z</updated>
   <id>https://ryankilleen.com/</id>
   <author>
     <name>Ryan Killeen</name>
   </author>
   <entry>
+    <title>Linking local node packages for development in PNPM</title>
+    <link href="https://ryankilleen.com/blog/linking-node-packages/" />
+    <updated>2025-03-05T00:00:00Z</updated>
+    <id>https://ryankilleen.com/blog/linking-node-packages/</id>
+    <content type="html">&lt;p&gt;Today I wanted to contribute some changes to Eleventy&#39;s RSS plugin.&lt;/p&gt;
+&lt;p&gt;When contributing changes to projects, it&#39;s important to make sure your changes work! I wanted to use the local copy of this site to confirm updates, but how to go about it?&lt;/p&gt;
+&lt;p&gt;This is fairly well documented for folks who use &lt;a href=&quot;https://docs.npmjs.com/cli/v9/commands/npm-link?v=true&quot;&gt;npm&lt;/a&gt; or &lt;a href=&quot;https://pnpm.io/cli/link&quot;&gt;pnpm&lt;/a&gt;, but in the spirit of getting in the habit of sharing what I know, here we go.&lt;/p&gt;
+&lt;h2 id=&quot;pre-requisites&quot;&gt;Pre-requisites&lt;/h2&gt;
+&lt;p&gt;Let&#39;s assume that you have an existing project that uses a package, and you&#39;ve also cloned the repository for that package. In our case, I&#39;ll be referencing &lt;code&gt;@11ty/eleventy-plugin-rss&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;step-1-globally-link-the-package&quot;&gt;Step 1: globally link the package&lt;/h2&gt;
+&lt;p&gt;After cloning the package repository, we&#39;ll want to &lt;code&gt;cd&lt;/code&gt; into that directory and globablly link the package.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; ~/Projects/community/eleventy-plugin-rss
+&lt;span class=&quot;token function&quot;&gt;pnpm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;link&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now this package can be referenced from anywhere on our local machine.&lt;/p&gt;
+&lt;h2 id=&quot;step-2-link-in-our-codebase&quot;&gt;Step 2: Link in our codebase&lt;/h2&gt;
+&lt;p&gt;We want to see the plugin&#39;s changes reflected in our blog project!&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; ~/Projects/ryankilleen.com
+&lt;span class=&quot;token function&quot;&gt;pnpm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;link&lt;/span&gt; @11ty/eleventy-plugin-rss&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It&#39;s as simple as that! Now changes made in our local copy of the plugin will be reflected in our blog.&lt;/p&gt;
+&lt;h2 id=&quot;caveat&quot;&gt;Caveat&lt;/h2&gt;
+&lt;p&gt;It&#39;s worth noting that with this approach, you&#39;ll need to manually run &lt;code&gt;pnpm i&lt;/code&gt; in your project to reflect changes made to the package. Maybe there&#39;s another way?&lt;/p&gt;
+&lt;h3 id=&quot;direct-linking-with-file-protocol&quot;&gt;Direct Linking with File Protocol&lt;/h3&gt;
+&lt;p&gt;We can use a different approach with the &lt;a href=&quot;https://pnpm.io/cli/link#whats-the-difference-between-pnpm-link-and-using-the-file-protocol&quot;&gt;file protocol&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As &lt;code&gt;pnpm&lt;/code&gt;&#39;s docs explain:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When you use the file: protocol in dependencies, the linked package is hard-linked to your project node_modules, you can modify the source code of the linked package, and the changes will be reflected in your project.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This means we won&#39;t need to run &lt;code&gt;pnpm i&lt;/code&gt; to see changes reflected. In our instance, we still need to restart the Eleventy process to reflect changes in the output, so &lt;strong&gt;this approach won&#39;t make much of a difference&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;For the sake of completion, here&#39;s what that looks like! Adding the following entry to our &lt;code&gt;package.json&lt;/code&gt; will directly link the package to our working directory instead of symlinking:&lt;/p&gt;
+&lt;pre class=&quot;language-json&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;pnpm&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;overrides&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;@11ty/eleventy-plugin-rss&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;link:../community/eleventy-plugin-rss&quot;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;pnpm&lt;/span&gt; i&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;cleanup&quot;&gt;Cleanup&lt;/h2&gt;
+&lt;p&gt;We don&#39;t want our project to look at our local copy of the plugin forever. Once we&#39;re done we can cleanup our links.&lt;/p&gt;
+&lt;p&gt;To remove references in our blog project, we can simply run&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;pnpm&lt;/span&gt; unlink&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Because we globally linked the RSS package, we can run the following to remove it from the global space.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;pnpm&lt;/span&gt; uninstall &lt;span class=&quot;token parameter variable&quot;&gt;--global&lt;/span&gt; @11ty/eleventy-plugin-rss&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Contributing to Eleventy (draft)</title>
+    <link href="https://ryankilleen.com/blog/first-contribution-to-eleventy/" />
+    <updated>2025-03-05T00:00:00Z</updated>
+    <id>https://ryankilleen.com/blog/first-contribution-to-eleventy/</id>
+    <content type="html"></content>
+  </entry>
+  <entry>
     <title>Brand New Me</title>
     <link href="https://ryankilleen.com/blog/init-blog/" />
-    <updated>2025-05-04T00:00:00Z</updated>
+    <updated>2025-03-04T00:00:00Z</updated>
     <id>https://ryankilleen.com/blog/init-blog/</id>
     <content type="html">&lt;p&gt;I&#39;ve gone and done it again. A blog refresh. Starting from scratch. Why? It&#39;s my party, and I can refactor if I want to. In reality, it boils down to a few reasons!&lt;/p&gt;
 &lt;h2 id=&quot;a-return-to-simplicity&quot;&gt;A Return to Simplicity&lt;/h2&gt;

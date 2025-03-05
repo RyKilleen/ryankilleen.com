@@ -2,7 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://ryankilleen.com/about/</loc>
+		<loc>https://ryankilleen.com/blog/init-blog/</loc>
+		<lastmod>2025-03-04</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://ryankilleen.com/blog/first-contribution-to-eleventy/</loc>
+		<lastmod>2025-03-05</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://ryankilleen.com/blog/linking-node-packages/</loc>
 		<lastmod>2025-03-05</lastmod>
 	</url>
 	
@@ -12,7 +22,7 @@
 	</url>
 	
 	<url>
-		<loc>https://ryankilleen.com/</loc>
+		<loc>https://ryankilleen.com/feed/feed.xml</loc>
 		<lastmod>2025-03-05</lastmod>
 	</url>
 	
@@ -22,12 +32,12 @@
 	</url>
 	
 	<url>
-		<loc>https://ryankilleen.com/feed/feed.xml</loc>
+		<loc>https://ryankilleen.com/</loc>
 		<lastmod>2025-03-05</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://ryankilleen.com/blog/init-blog/</loc>
-		<lastmod>2025-05-04</lastmod>
+		<loc>https://ryankilleen.com/about/</loc>
+		<lastmod>2025-03-05</lastmod>
 	</url>
 </urlset>
