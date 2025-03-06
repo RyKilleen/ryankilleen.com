@@ -5,9 +5,12 @@ const eleventyNavigation = {
 };
 ---
 
-<h1>Ryan Killeen</h1>
+<div class="resume-header">
+  <h1>Ryan Killeen</h1>
+  <button onClick="window.print();" class="print-button">Print Page</button>
+</div>
 
-<section>
+<section class="summary">
   <h2>Summary</h2>
   <p>
     Ryan is a Senior Web Engineer with a passion for building accessible,
@@ -76,15 +79,15 @@ const eleventyNavigation = {
         Collaborated to defined, design and developed core product functionality
       </li>
       <li>
-        Implemented testcontainers for rapid integration testing in CI/CD
-        pipeline, speeding up feature development and reducing human error
+        Implemented <em>testcontainers</em> for rapid integration testing in
+        CI/CD pipeline, speeding up feature development and reducing human error
       </li>
       <li>
         Refreshed data visualizations with visx for flexibility in custom
         visualizations
       </li>
       <li>
-        Introduced PostHog for user session replays and feature flag
+        Introduced <em>PostHog</em> for user session replays and feature flag
         implementations
       </li>
     </ul>
@@ -163,4 +166,30 @@ const eleventyNavigation = {
       </li>
     </ul>
   </section>
+</section>
+<section>
+  <h2>Relevant Skill</h2>
+  <ul class="skill-list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JS</li>
+    <li>TypeScript</li>
+    <li>React</li>
+    <li>Accessibility</li>
+    <li>Testing Library</li>
+    <li>Storybook</li>
+    <li>Jest</li>
+    <li>Playwright</li>
+    <li>GraphQL</li>
+    <li>Postgres</li>
+    <li>CI/CD</li>
+    <li>Neo4j</li>
+  </ul>
+</section>
+<section>
+  <h2>Education</h2>
+  <p>
+    Muhlenberg College, B. A. of Liberal Arts, 2012 Double Major: Media &
+    Communications, Theater
+  </p>
 </section>
