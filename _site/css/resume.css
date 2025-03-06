@@ -1,0 +1,19 @@
+@layer resume {
+  section {
+    padding-bottom: 1rem;
+  }
+
+  header {
+    padding: 0;
+    gap: 4px;
+  }
+
+  .entry h3 {
+    margin: 0;
+  }
+
+  .entry em {
+    font-style: normal;
+    background-color: greenyellow;
+  }
+}

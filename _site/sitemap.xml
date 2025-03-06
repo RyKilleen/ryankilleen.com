@@ -17,27 +17,32 @@
 	</url>
 	
 	<url>
+		<loc>https://ryankilleen.com/about/</loc>
+		<lastmod>2025-03-06</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://ryankilleen.com/blog/</loc>
-		<lastmod>2025-03-05</lastmod>
+		<lastmod>2025-03-06</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://ryankilleen.com/feed/feed.xml</loc>
-		<lastmod>2025-03-05</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://ryankilleen.com/tags/</loc>
-		<lastmod>2025-03-05</lastmod>
+		<lastmod>2025-03-06</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://ryankilleen.com/</loc>
-		<lastmod>2025-03-05</lastmod>
+		<lastmod>2025-03-06</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://ryankilleen.com/about/</loc>
-		<lastmod>2025-03-05</lastmod>
+		<loc>https://ryankilleen.com/resume/</loc>
+		<lastmod>2025-03-06</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://ryankilleen.com/tags/</loc>
+		<lastmod>2025-03-06</lastmod>
 	</url>
 </urlset>

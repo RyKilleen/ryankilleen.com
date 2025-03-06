@@ -15,7 +15,7 @@ export default async function (eleventyConfig) {
   // Drafts, see also _data/eleventyDataSchema.js
   eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
     if (data.draft) {
-      data.title = `${data.title } (draft)`;
+      data.title = `${data.title} (draft)`;
     }
     if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
       return false;
@@ -61,7 +61,7 @@ export default async function (eleventyConfig) {
     templateData: {
       eleventyNavigation: {
         key: "RSS Feed",
-        order: 4,
+        order: 5,
       },
     },
     collection: {
@@ -71,7 +71,8 @@ export default async function (eleventyConfig) {
     metadata: {
       language: "en",
       title: "Ryan Killeen - Web Developer, Among Other Things",
-      subtitle: "A personal blog documenting webdev, life with ADHD, home cooking, self-hosting, and much more",
+      subtitle:
+        "A personal blog documenting webdev, life with ADHD, home cooking, self-hosting, and much more",
       base: "https://ryankilleen.com/",
       author: {
         name: "Ryan Killeen",
@@ -104,9 +105,15 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginFilters);
 
   eleventyConfig.addPlugin(IdAttributePlugin, {
-    // by default we use Eleventy’s built-in `slugify` filter:
-    // slugify: eleventyConfig.getFilter("slugify"),
-    // selector: "h1,h2,h3,h4,h5,h6", // default
+    filter: function ({ page }) {
+      const pathsToSkip = ["resume.html"];
+
+      if (pathsToSkip.some((str) => page.inputPath.endsWith(str))) {
+        return false;
+      }
+
+      return true;
+    },
   });
 
   eleventyConfig.addShortcode("currentBuildDate", () => {

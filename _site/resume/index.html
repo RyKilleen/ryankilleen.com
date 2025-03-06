@@ -3,179 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Brand New Me</title>
-		<meta name="description" content="All good blog posts are about restarting your blog">
+		<title>Ryan Killeen - Web Developer, Among Other Things</title>
+		<meta name="description" content="A personal blog documenting webdev, life with ADHD, home cooking, self-hosting, and much more">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Ryan Killeen - Web Developer, Among Other Things">
 		
-		<style>/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #272822;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #8292a2;
-}
-
-.token.punctuation {
-	color: #f8f8f2;
-}
-
-.token.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-	color: #ae81ff;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #a6e22e;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: #f8f8f2;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-	color: #e6db74;
-}
-
-.token.keyword {
-	color: #66d9ef;
-}
-
-.token.regex,
-.token.important {
-	color: #fd971f;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}
-/*
- * New diff- syntax
- */
-
-pre[class*="language-diff-"] {
-	--eleventy-code-padding: 1.25em;
-	padding-left: var(--eleventy-code-padding);
-	padding-right: var(--eleventy-code-padding);
-}
-.token.deleted {
-	background-color: hsl(0, 51%, 37%);
-	color: inherit;
-}
-.token.inserted {
-	background-color: hsl(126, 31%, 39%);
-	color: inherit;
-}
-
-/* Make the + and - characters unselectable for copy/paste */
-.token.prefix.unchanged,
-.token.prefix.inserted,
-.token.prefix.deleted {
-	-webkit-user-select: none;
-	user-select: none;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-.token.prefix.inserted,
-.token.prefix.deleted {
-	width: var(--eleventy-code-padding);
-	background-color: rgba(0,0,0,.2);
-}
-
-/* Optional: full-width background color */
-.token.inserted:not(.prefix),
-.token.deleted:not(.prefix) {
-	display: block;
-	margin-left: calc(-1 * var(--eleventy-code-padding));
-	margin-right: calc(-1 * var(--eleventy-code-padding));
-	text-decoration: none; /* override del, ins, mark defaults */
-	color: inherit; /* override del, ins, mark defaults */
-}
-/* This is an arbitrary CSS string added to the bundle */
+		<style>/* This is an arbitrary CSS string added to the bundle */
 @layer theme, resume;
 
 @layer theme {
@@ -502,12 +334,12 @@ pre[class*="language-diff-"] {
 		<header>
 			<a href="/" class="home-link">Ryan Killeen - Web Developer, Among Other Things</a>
 			<nav>
-				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav">
 					<li class="nav-item"><a href="/">Home</a></li>
 					<li class="nav-item"><a href="/blog/">Archive</a></li>
 					<li class="nav-item"><a href="/about/">About</a></li>
-					<li class="nav-item"><a href="/resume/">Resume</a></li>
+					<li class="nav-item"><a href="/resume/" aria-current="page">Resume</a></li>
 					<li class="nav-item"><a href="/feed/feed.xml">RSS Feed</a></li>
 				</ul>
 			</nav>
@@ -516,40 +348,167 @@ pre[class*="language-diff-"] {
 		<main id="skip">
 			<heading-anchors>
 				
-<h1 id="brand-new-me">Brand New Me</h1>
 
-<ul class="post-metadata">
-	<li><time datetime="2025-03-04">04 March 2025</time></li>
-	<li><a href="/tags/intro/" class="post-tag">intro</a></li>
-</ul>
 
-<p>I've gone and done it again. A blog refresh. Starting from scratch. Why? It's my party, and I can refactor if I want to. In reality, it boils down to a few reasons!</p>
-<h2 id="a-return-to-simplicity">A Return to Simplicity</h2>
-<p>The web has trended towards over-engineered solutions. I'm far from <a href="http://localhost:8080/blog/firstpost/#good-ole-html">alone</a> in this opinion!</p>
-<h3 id="platform">Platform</h3>
-<p>The last iteration of my site served as a way to familiarize myself with <a href="https://sanity.io">Sanity CMS</a>, a wonderful CMS platform for many applications. But in my case, it was overkill! I'm a singular person, without a content team or the need for complex content management approachs.</p>
-<h3 id="framework-fatigue">Framework fatigue</h3>
-<p>I wanted to return to my roots and shed the over-engineered JS frameworks. All of it feels overkill for my personal site's needs:</p>
-<ul>
-<li>My content isn't very dynamic</li>
-<li>My content is very light-weight: text and photos</li>
-<li>I'm comfortable using Markdown</li>
-</ul>
-<p>A static generator is perfect for a site that receives updates once a month!</p>
-<h2 id="community">Community</h2>
-<p>The webdev community is beloved to me, and the only reason I have a career in web development. I am not self-taught, I am community-raised. And let me tell you, my community loves Eleventy.</p>
-<h2 id="features">Features</h2>
-<h3 id="sweet-sweet-syntax-highlighting">Sweet, sweet syntax highlighting</h3>
-<p>Being a developer, syntax highlighting on my blog is important to me! My prior Sanity CMS setup had an implementation, but I had to set up each language as one-offs. This was often the final roadblock between me authoring a post or not.</p>
-<p>That's all possible through the <a href="https://www.11ty.dev/docs/plugins/syntaxhighlight/"><code>eleventy-plugin-syntaxhighlight</code></a> plugin implementing <a href="https://prismjs.com">PrismJS</a>!</p>
-<h3 id="rss-everywhere">RSS Everywhere</h3>
-<p>It's truly making a comeback, at least in my life (blog to come!) And you guessed it, there's an official <a href="https://www.11ty.dev/docs/plugins/rss/">an RSS plugin</a> ready to go.</p>
-<h3 id="and-more-to-come">And More to Come</h3>
-<p>I've barely scratched the surface of the 11ty community (and my own journey in blogging.)</p>
-<p>I hope this lowers the barrier of entry to writing posts. I'm excited to learn in public and give back to the community that has helped me for many years.</p>
+<h1>Ryan Killeen</h1>
 
-<ul class="links-nextprev"><li class="links-nextprev-next">Next →<br><a href="/blog/first-contribution-to-eleventy/">Contributing to Eleventy (draft)</a></li>
-</ul>
+<section>
+  <h2>Summary</h2>
+  <p>
+    Ryan is a Senior Web Engineer with a passion for building accessible,
+    user-focused experiences! From Fortune 50 companies to startups, he has
+    delivered world-class user experiences while leveling up teams and
+    processes. Always learning!
+  </p>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <section class="entry">
+    <header>
+      <h3>Senior Frontend Engineer - <span class="employer">MANTL</span></h3>
+
+      <span class="date"> March 2022 - Feb 2023, Jun 2024 - Jul 2024</span>
+    </header>
+    <ul>
+      <li>
+        <em>Reduced baseline bundle size by 45% (~1mb),</em> modernized usage of
+        NextJS from v9 to v12
+      </li>
+      <li>
+        Introduced feature flag development with LaunchDarkly to quickly and
+        safely release features
+      </li>
+      <li>
+        Migrated bespoke permissions solution with off-the-shelf offering,
+        addressing the largest pain-point in feature development
+      </li>
+      <li>
+        <em>Established cross-discipline design system governance,</em> created
+        Storybook with interaction testing and accessibility testing
+        best-practices
+      </li>
+      <li>
+        Rapid implementation of MVP features with a focus on maintainability and
+        iteration
+      </li>
+      <li>
+        Mentored early-career engineers in front-end best practices,
+        accessibility, and NextJS
+      </li>
+    </ul>
+  </section>
+  <section class="entry">
+    <header>
+      <h3>
+        Lead Web Engineer - <span class="employer">Cognition Controls</span>
+      </h3>
+
+      <span class="date">Feb 2023 - May 2024</span>
+    </header>
+    <ul>
+      <li>
+        Vetted and migrated 75 million records to TimescaleDB for more
+        performant Postgres time-series storage and queries,
+        <em> reducing minute-long queries to sub second response time </em>
+      </li>
+      <li>
+        Migrated bespoke Koa API to tRPC for strongly-typed interop between
+        frontend and backend, reducing time of feature implementation from weeks
+        to days
+      </li>
+      <li>
+        Collaborated to defined, design and developed core product functionality
+      </li>
+      <li>
+        Implemented testcontainers for rapid integration testing in CI/CD
+        pipeline, speeding up feature development and reducing human error
+      </li>
+      <li>
+        Refreshed data visualizations with visx for flexibility in custom
+        visualizations
+      </li>
+      <li>
+        Introduced PostHog for user session replays and feature flag
+        implementations
+      </li>
+    </ul>
+  </section>
+  <section class="entry">
+    <header>
+      <h3>
+        Senior Engineer - <span class="employer">Nerd Street Gamers</span>
+      </h3>
+      <span class="date">Nov 2020 - March 2022</span>
+    </header>
+    <ul>
+      <li>
+        Implemented Sanity CMS, improving content editor experience, ease of
+        development with NextJS, and <em>reducing load-time to milliseconds</em>
+      </li>
+      <li>
+        Added Firebase anonymous user carts and registration conversion,
+        refactoring large portions of Auth logic and session hooks
+      </li>
+      <li>Led accessibility initiative to meet WCAC 2.0 Level AA compliance</li>
+    </ul>
+  </section>
+  <section class="entry">
+    <header>
+      <h3>
+        Senior Frontend Engineer - <span class="employer">Think Company</span>
+      </h3>
+      <span class="date">July 2016 - Nov 2020</span>
+    </header>
+    <ul>
+      <li>
+        Engineered component library to unify designs across 4 applications,
+        white-labeled for 30+ brands
+      </li>
+      <li>
+        Mentored teams of developers in React/Redux, unit testing, and front-end
+        best practices
+      </li>
+      <li>
+        <em>Reduced Time to Interactive by 50% for 21k daily users</em> through
+        code and asset optimization, caching, gzipping, and CDN usage
+      </li>
+      <li>
+        Implemented Lerna to deploy UI components as individual packages,
+        improving portability
+      </li>
+      <li>
+        Architected / developed React+Redux apps, migrating from Knockout.js to
+        modern SPA
+      </li>
+    </ul>
+  </section>
+  <section class="entry">
+    <header>
+      <h3>Front-end Developer - <span class="employer">Nimblelight</span></h3>
+      <span class="date">Jan 2014 - July 2016</span>
+    </header>
+    <ul>
+      <li>
+        Migrated one-click car sale website with 3k inventory away from single
+        provisioned servers into cloud-based Azure architecture, de-coupled and
+        retooled inventory importer to allow for company growth
+      </li>
+      <li>
+        Defined front-end development workflow, introducing and implementing NPM
+        and Gulp
+      </li>
+      <li>
+        Introduced and implemented use of Staging and QA environments, versioned
+        deployment with Gitflow
+      </li>
+      <li>
+        Introduced SVG as a solution for scalable graphics and web animation in
+        responsive design
+      </li>
+    </ul>
+  </section>
+</section>
 
 			</heading-anchors>
 		</main>
@@ -558,7 +517,7 @@ pre[class*="language-diff-"] {
 			<p><em>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a></em></p>
 		</footer>
 
-		<!-- This page `/blog/init-blog/` was built on 2025-03-06T17:39:28.452Z -->
+		<!-- This page `/resume/` was built on 2025-03-06T17:39:28.453Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
