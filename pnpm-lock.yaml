@@ -34,8 +34,8 @@ importers:
         specifier: ^3.5.0
         version: 3.5.0
       prismjs:
-        specifier: ^1.29.0
-        version: 1.29.0
+        specifier: ^1.30.0
+        version: 1.30.0
       zod:
         specifier: ^3.23.8
         version: 3.24.2
@@ -822,8 +822,8 @@ packages:
     resolution: {integrity: sha512-JcEmHlyLK/o0uGAlj65vgg+7LIms0xKXe60lcDOTU7oVX/3LuEuLwrQpW3VJ7de5TaFKiW4kWkaIpJL42FEgxQ==}
     engines: {node: '>=12.0.0'}
 
-  prismjs@1.29.0:
-    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
+  prismjs@1.30.0:
+    resolution: {integrity: sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==}
     engines: {node: '>=6'}
 
   promise@7.3.1:
@@ -1072,7 +1072,7 @@ snapshots:
 
   '@11ty/eleventy-plugin-syntaxhighlight@5.0.0':
     dependencies:
-      prismjs: 1.29.0
+      prismjs: 1.30.0
 
   '@11ty/eleventy-utils@1.0.3':
     dependencies:
@@ -1777,7 +1777,7 @@ snapshots:
       posthtml-parser: 0.11.0
       posthtml-render: 3.0.0
 
-  prismjs@1.29.0: {}
+  prismjs@1.30.0: {}
 
   promise@7.3.1:
     dependencies:
