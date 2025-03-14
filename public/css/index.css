@@ -200,32 +200,33 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
-
-  .print-button {
-    /* display: block; */
-    /* max-height: 40px; */
-  }
-
+  
   .entry em {
     padding: 0 2px;
     font-style: normal;
-    background-color: hsl(152 103% 76% / 1);
+    background-color: var(--pico-text-selection-color);
   }
 
-  .skill-list {
+  
+
+  .tag-list {
     display: flex;
     align-items: start;
     flex-wrap: wrap;
     gap: 4px;
 
     padding: 0;
-    list-style: none;
+    
   }
-  .skill-list li {
+
+  .tag-list li {
+    background-color: var(--pico-primary-background);
+    border-color: var(--pico-primary-border);
+    color: var(--pico-primary-inverse);
     padding: 2px 6px;
     border-radius: 4px;
-    background: hsl(157 33% 73% / 1);
     font-family: monospace;
+    list-style: none;
   }
 
   @media print {
