@@ -1,7 +1,11 @@
 ---
 title: Linking local node packages for development in PNPM
 date: 2025-03-05
-tags: pnpm, npm, js, node
+tags: 
+  - pnpm
+  - npm
+  - js
+  - node
 ---
 
 Today I wanted to contribute some changes to Eleventy's RSS plugin.
