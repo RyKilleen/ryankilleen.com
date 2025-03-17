@@ -1,16 +1,20 @@
-@layer pico, base, components, resume;
+@layer pico, theme, base, components, resume;
 
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css")
+layer(pico);
 
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css') layer(pico);
+@import url("./resume.css") layer(resume);
 
-@import url('./resume.css') layer(resume);
+@layer theme {
+  :root {
+    --pico-font-family-sans-serif: "Atkinson Hyperlegible Next", "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue",
+      sans-serif, var(--pico-font-family-emoji);
+  }
+}
 
 @layer base {
-  :root {
-    --pico-font-family-sans-serif: "Atkinson Hyperlegible Next","Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,Helvetica,Arial,"Helvetica Neue",sans-serif,var(--pico-font-family-emoji);
-  }
-  
   html {
     width: 100%;
   }
@@ -26,7 +30,6 @@
   main {
     padding: 0 5%;
   }
-  
 
   /* Fluid images via https://www.zachleat.com/web/fluid-images/ */
   img {
@@ -58,7 +61,6 @@
     padding: 1rem;
   }
 
-
   .home-link {
     flex-grow: 1;
     font-size: 1em;
@@ -68,8 +70,6 @@
   .home-link:link:not(:hover) {
     text-decoration: none !important;
   }
-
-  
 }
 
 @layer components {
