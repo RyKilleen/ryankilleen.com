@@ -8,9 +8,10 @@ layer(pico);
 
 @layer theme {
   :root {
-    --pico-font-family-sans-serif: "Atkinson Hyperlegible Next", "Segoe UI",
-      Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue",
-      sans-serif, var(--pico-font-family-emoji);
+    --pico-font-family-sans-serif:
+      "Atkinson Hyperlegible Next", "Segoe UI", Roboto, Oxygen, Ubuntu,
+      Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif,
+      var(--pico-font-family-emoji);
   }
 }
 
@@ -34,6 +35,7 @@ layer(pico);
   /* Fluid images via https://www.zachleat.com/web/fluid-images/ */
   img {
     max-width: 100%;
+    margin-bottom: 0.5rem;
   }
   img[width][height] {
     height: auto;
@@ -184,6 +186,7 @@ layer(pico);
     list-style: none !important;
     padding: 0;
     margin: 0;
+    margin-bottom: 3rem;
   }
   .post-metadata time {
     margin-right: 1em;
