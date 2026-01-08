@@ -39,7 +39,7 @@ Every morning, I wander out into my hallway with my dog in tow. Every morning, I
 
 When refactoring a UI, it's important to start with the foundations. What are the user's goals? What here doesn't meet those needs? What are we even doing?
 
-### First: Who are our users?
+### First: Who are Our Users?
 
 Let's state the users and goals explicitly.
 
