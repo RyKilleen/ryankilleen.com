@@ -8,9 +8,24 @@ layer(pico);
 
 @layer theme {
   :root {
-    --pico-font-family-sans-serif: "Atkinson Hyperlegible Next", "Segoe UI",
-      Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue",
-      sans-serif, var(--pico-font-family-emoji);
+    --pico-font-family-sans-serif:
+      "Atkinson Hyperlegible Next", "Segoe UI", Roboto, Oxygen, Ubuntu,
+      Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif,
+      var(--pico-font-family-emoji);
+  }
+
+  /* Dark color scheme (Auto) */
+  /* Automatically enabled if user has Dark mode enabled */
+  @media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --pico-muted-color: #8198c5;
+    }
+  }
+
+  /* Dark color scheme (Forced) */
+  /* Enabled if forced with data-theme="dark" */
+  [data-theme="dark"] {
+    --pico-muted-color: #8198c5;
   }
 }
 
@@ -34,6 +49,7 @@ layer(pico);
   /* Fluid images via https://www.zachleat.com/web/fluid-images/ */
   img {
     max-width: 100%;
+    margin-bottom: 0.5rem;
   }
   img[width][height] {
     height: auto;
@@ -59,6 +75,15 @@ layer(pico);
 
   footer {
     padding: 1rem;
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 1rem;
+    border-left: 2px solid var(--pico-muted-border-color);
+    margin-bottom: 0.5rem;
   }
 
   .home-link {
@@ -184,6 +209,7 @@ layer(pico);
     list-style: none !important;
     padding: 0;
     margin: 0;
+    margin-bottom: 3rem;
   }
   .post-metadata time {
     margin-right: 1em;
