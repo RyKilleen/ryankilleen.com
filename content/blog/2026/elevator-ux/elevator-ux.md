@@ -22,7 +22,7 @@ tags:
 
 In the apartment building where I live, I am forced to think about human design. Every. Single. Morning.
 
-For context, I'm an able-bodied adult with decent dexterity when it comes to pushing buttons (something I've done my whole life).
+For context, I'm an adult who's not living with a disability, and who has decent dexterity when it comes to pushing buttons (something I've done my whole life).
 
 Every morning, I wander out into my hallway with my dog in tow. Every morning, I steady myself, my shoulder buttressed against the wall, and I carefully choose the tiny letter **G** on my elevator's touchscreen panel... and, I pressed **7** again. Damn it.
 
