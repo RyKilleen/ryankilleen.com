@@ -28,8 +28,8 @@ You're given a choice of Audio Speech Recognition (ASR) models to use on first r
 
 ![A screenshot of Handy start screen](./handy-general.png)
 
-> ⚠️ A Note About ASR Models
->
+
+> [!warning] A Note About ASR Models
 > The morality of these models are outside the scope of this post. There are many intelligent people fighting an important fight against infringement and large-scale abuse and I stand with those people. This software aims to improve the lives of those who need it, and that's a worthwhile endeavor.
 
 ## Experience So Far

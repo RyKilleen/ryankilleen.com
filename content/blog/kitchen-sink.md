@@ -4,6 +4,23 @@ date: 2025-03-04
 draft: true
 ---
 
+<!--toc:start-->
+- [Markdown Kitchen Sink](#markdown-kitchen-sink)
+        - [Table of Contents](#table-of-contents)
+  - [Headers](#headers)
+  - [Emphasis](#emphasis)
+  - [Lists](#lists)
+  - [Links](#links)
+  - [Images](#images)
+  - [Code and Syntax Highlighting](#code-and-syntax-highlighting)
+  - [Tables](#tables)
+  - [Blockquotes](#blockquotes)
+  - [Inline HTML](#inline-html)
+  - [Horizontal Rule](#horizontal-rule)
+  - [Line Breaks](#line-breaks)
+  - [Callouts](#callouts)
+<!--toc:end-->
+
 # Markdown Kitchen Sink
 
 ##### Table of Contents
@@ -220,4 +237,28 @@ This line is only separated by a single newline, so it's a separate line in the 
 (Technical note: _Markdown Here_ uses GFM line breaks, so there's no need to use MD's two-space line breaks.)
 
 <a name="videos"></a>
+
+## Callouts
+
+
+> [!caution] Caution
+> Description
+
+
+> [!important] Important
+> Description
+
+
+> [!note] Note
+> Description
+
+
+
+> [!tip] Tip
+> Description
+
+
+
+> [!warning] Warning
+> Description
 
