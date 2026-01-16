@@ -8,6 +8,7 @@ import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import EleventyPluginOgImage from "eleventy-plugin-og-image";
+import MarkdownItGitHubAlerts from "markdown-it-github-alerts";
 import fs from "fs";
 
 import pluginFilters from "./_config/filters.js";
@@ -82,6 +83,10 @@ export default async function (eleventyConfig) {
     },
   });
 
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib.use(MarkdownItGitHubAlerts),
+  );
+
   // OpenGraph images
   eleventyConfig.addPlugin(EleventyPluginOgImage, {
     satoriOptions: {
@@ -149,9 +154,6 @@ export const config = {
   // Control which files Eleventy will process
   // e.g.: *.md, *.njk, *.html, *.liquid
   templateFormats: ["md", "njk", "html", "liquid", "11ty.js"],
-
-  // Pre-process *.md files with: (default: `liquid`)
-  markdownTemplateEngine: "njk",
 
   // Pre-process *.html files with: (default: `liquid`)
   htmlTemplateEngine: "njk",

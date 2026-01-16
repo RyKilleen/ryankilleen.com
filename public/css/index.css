@@ -1,7 +1,9 @@
 @layer pico, theme, base, components, resume;
 
+@import url("github-base.css");
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-@import url("https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css")
+@import url("https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css");
+
 layer(pico);
 
 @import url("./resume.css") layer(resume);
