@@ -35,6 +35,10 @@
 
 		{#- Add the heading-anchors web component to the JavaScript bundle #}
 		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
+
+		
+    {% ogImage "./og-image.og.njk", { title: title or metadata.title} %}
+		
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>

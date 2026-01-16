@@ -7,6 +7,8 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import EleventyPluginOgImage from "eleventy-plugin-og-image";
+import fs from "fs";
 
 import pluginFilters from "./_config/filters.js";
 
@@ -77,6 +79,20 @@ export default async function (eleventyConfig) {
       author: {
         name: "Ryan Killeen",
       },
+    },
+  });
+
+  // OpenGraph images
+  eleventyConfig.addPlugin(EleventyPluginOgImage, {
+    satoriOptions: {
+      fonts: [
+        {
+          name: "Noto",
+          data: fs.readFileSync("./public/font/NotoSans-Bold.ttf"),
+          weight: 700,
+          style: "normal",
+        },
+      ],
     },
   });
 
