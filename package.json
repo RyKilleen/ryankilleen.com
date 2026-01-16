@@ -43,7 +43,7 @@
     "cross-env": "^7.0.3",
     "eleventy-plugin-og-image": "^4.2.1",
     "luxon": "^3.5.0",
-    "prismjs": "^1.29.0",
+    "prismjs": "^1.30.0",
     "zod": "^3.23.8",
     "zod-validation-error": "^3.3.1"
   },
